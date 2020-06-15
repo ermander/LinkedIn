@@ -1,27 +1,112 @@
 import React, { Component } from "react";
-import { Container, Row, Col,ListGroup } from "react-bootstrap";
+import { Container, Row, Col, ListGroup, Form } from "react-bootstrap";
+import { BsQuestionCircle } from "react-icons/bs";
+import { FiSettings } from "react-icons/fi";
 
 export default class footer extends Component {
   render() {
     return (
-      <Container>
+      <Container fluid className="footer">
         <Row>
-          <Col lg={2}>
+          <Col lg={2} className="logo">
             <img
               className="img-fluid"
-              src="https://logos-world.net/wp-content/uploads/2020/04/Linkedin-Logo.png"
+              src="https://logos-world.net/wp-content/uploads/2020/04/Linkedin-Logo-2003%E2%80%932011.png"
               alt=""
             />
+          </Col>
+        </Row>
+        <Row>
+          <Col lg={2}>
             <ListGroup>
-              <ListGroup.Item disabled>Cras justo odio</ListGroup.Item>
-              <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-              <ListGroup.Item>Morbi leo risus</ListGroup.Item>
-              <ListGroup.Item>Porta ac consectetur ac</ListGroup.Item>
+              <ListGroup.Item>
+                <a>About</a>
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <a>Community Guidelines</a>
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <a>Privacy & Terms</a>
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <a>Sales Solutions</a>
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <a>Safety Center</a>
+              </ListGroup.Item>
             </ListGroup>
           </Col>
-          <Col lg={2}></Col>
-          <Col lg={2}></Col>
-          <Col lg={4}></Col>
+          <Col lg={2}>
+            <ListGroup>
+              <ListGroup.Item>
+                <a>Accessibility</a>
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <a>Career</a>
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <a>Ad Choices</a>
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <a>Mobile</a>
+              </ListGroup.Item>
+            </ListGroup>
+          </Col>
+          <Col lg={2}>
+            <ListGroup>
+              <ListGroup.Item>
+                <a>Talent Solutions</a>
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <a>Marketing Solutions</a>
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <a>Advertising</a>
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <a>Small Business</a>
+              </ListGroup.Item>
+            </ListGroup>
+          </Col>
+          <Col lg={3}>
+            <div className="d-flex">
+              <BsQuestionCircle
+                style={{ color: "#0073b1", fontSize: "2.4em" }}
+              />
+              <div>
+                <p className="m-0 pl-2" style={{ fontSize: "0.8em" }}>
+                  Questions ?
+                </p>
+                <p className="m-0 pl-2" style={{ fontSize: "0.7em" }}>
+                  Visit our Help center
+                </p>
+              </div>
+            </div>
+            <div className="d-flex mt-2">
+              <FiSettings style={{ color: "#0073b1", fontSize: "2.4em" }} />
+              <div>
+                <p className="m-0 pl-2" style={{ fontSize: "0.8em" }}>
+                  Manage your account and privatcy ?
+                </p>
+                <p className="m-0 pl-2" style={{ fontSize: "0.7em" }}>
+                  Visit our Help center
+                </p>
+              </div>
+            </div>
+          </Col>
+          <Col lg={3}>
+            <Form.Group controlId="exampleForm.ControlSelect1">
+              <Form.Label>Example select</Form.Label>
+              <Form.Control size="sm" as="select">
+                <option>English</option>
+                <option>Albanian</option>
+                <option>Chinese</option>
+                <option>Italian</option>
+                <option>Spanish</option>
+                <option>Serbian</option>
+              </Form.Control>
+            </Form.Group>
+          </Col>
         </Row>
       </Container>
     );
