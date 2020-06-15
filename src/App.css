@@ -2,6 +2,35 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+  }
+
+.navbar{
+padding-right: 8%;
+padding-left: 8%;
+padding-top: 0rem;
+padding-bottom: 0rem;
+background-color: #283e4a;
+}
+.linked{
+ width:40px;
+ height:40px;
+   }
+.icons{
+  font-size: 20px;
+  padding-top: 0rem;
+  background-color: transparent;
+ 
+}
+.left{
+  outline: solid red 1px;
+  text-align: center;
+  height: 100%;
+  font-size: 15px;
+/* width: 50px; */
+ justify-content: center;
+ display: block;
+ vertical-align: baseline;
+ display: block;
 }
 .footer div.list-group-item {
   font-size: 0.8rem;
