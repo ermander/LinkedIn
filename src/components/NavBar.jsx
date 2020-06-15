@@ -5,9 +5,11 @@ import {AiOutlineHome,AiOutlineTeam , AiOutlinePlaySquare} from 'react-icons/ai'
 import {RiBriefcaseLine} from 'react-icons/ri'
 import {MdMessage} from 'react-icons/md'
 import {IoMdNotificationsOutline} from 'react-icons/io'
-import photo from '../images/photo.jpg'
+import photo from '../images/photo.png'
 import {BsGrid3X3GapFill} from 'react-icons/bs'
 export default class NavBar extends Component {
+    
+     
     render() {
         return (
             <div>                
@@ -22,7 +24,7 @@ export default class NavBar extends Component {
       <Nav.Link href="#jobs"  ><RiBriefcaseLine  style={{fontSize:"20px"}}/><div style={{fontSize:"13px"}}> Jobs</div></Nav.Link>
       <Nav.Link href="#messaging" ><MdMessage style={{fontSize:"20px"}}/><div style={{fontSize:"13px"}}> Messaging</div></Nav.Link>
       <Nav.Link href="#notifications"  ><IoMdNotificationsOutline style={{fontSize:"20px"}}/><div style={{fontSize:"13px"}}> Notifications</div></Nav.Link>
-      <Nav.Link href="#profile"  ><img src={photo} style={{borderRadius: "50%", height:"20px" , width:"20px" }}></img><div style={{fontSize:"13px"}}>Me <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16" fill="currentColor" width="16" height="16" focusable="false">
+      <Nav.Link href="#profile"  ><img src={photo} style={{borderRadius: "50%", height:"20px" , width:"20px" }}></img><div style={{fontSize:"13px"}} onClick="clickme()" >Me <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16" fill="currentColor" width="16" height="16" focusable="false">
   <path d="M8.8 10.66L14 5.12a.07.07 0 00-.07-.12H2.07a.07.07 0 00-.07.12l5.2 5.54a1.1 1.1 0 001.6 0z"></path>
 </svg></div></Nav.Link>
 <Nav.Link style={{borderRight:"1px grey solid", height:"59px"}}></Nav.Link>
