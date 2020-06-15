@@ -7,7 +7,7 @@ const PageViewer = () => {
     <li className='mb-2'>
         <Row>
             <Col className='col-3'>
-                <Image src='' style={{width: 100 + "%", height: 57.5 + "px", borderRadius: 25 + 'px'}}/>
+                <Image src='' style={{width: 100 + "%", height: 57.5 + "px", borderRadius: 25 + 'px'}} alt="User's picture"/>
             </Col>
                 <Col className='col-6 d-flex flex-column'>
                     <span>Viewer Name</span>
