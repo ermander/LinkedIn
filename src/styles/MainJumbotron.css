@@ -2,6 +2,7 @@
   padding: 0 !important;
   background-color: white !important;
   border: solid 2px #DADDDF;
+  /* border-top: none; */
 }
 
 .bgImage{

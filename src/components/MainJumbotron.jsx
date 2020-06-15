@@ -6,6 +6,21 @@ import {FaCamera,FaPencilAlt,FaEye} from 'react-icons/fa'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export class MainJumbotron extends Component {
+  state={
+    data :[]
+  }
+  componentDidMount =async()=>{
+    let response = await fetch('https://striveschool.herokuapp.com/api/profile/me',{
+      method :'GET',
+      headers : new Headers({
+        'Authorization': 'Basic dXNlcjE4OlEyejVWN2hFRlU2SktSckU=',
+        'Content-type': "application/json"
+      })
+    })
+    let parsedJson = await response.json()
+    this.setState({data : parsedJson})
+    console.log(parsedJson)
+  }
   render() {
     return (
       <>
@@ -35,9 +50,9 @@ export class MainJumbotron extends Component {
         <div id='profileInfo'>
            <div id='info' >
               <div id='personalInfo'>
-                <p>Mandeep Sai</p>
-                <p>Student in Computational Methods in Engineering at Leibniz Universitat</p>
-                <p>Hannover Area, Germany -<span> 51 connections </span>-<span> Contact info </span></p>
+                <p>{this.state.data.name}</p>
+                <p>{this.state.data.title}</p>
+                <p>{this.state.data.area} -<span> 51 connections </span>-<span> Contact info </span></p>
               </div>
               <p>Leibniz Universitat Hannover</p>
            </div>
@@ -45,7 +60,7 @@ export class MainJumbotron extends Component {
         <div id='present'>
           <div>
             <p>Open to job opportunities</p>
-            <p>Web Developer roles</p>
+            <p>{this.state.data.bio}</p>
             <p>See all details</p>
           </div>
           <IconContext.Provider value={{className : "editIcon"}}>

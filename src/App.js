@@ -5,11 +5,13 @@ import Footer from './components/Footer'
 import MainJumbotron from './components/MainJumbotron'
 import SideBar from './components/SideBar';
 import {Container,Row,Col}from 'react-bootstrap'
+import NavBar from './components/NavBar'
 
 function App() {
   return (
     <>
-    <Container>
+    <NavBar/>
+    <Container style={{marginTop:'58px'}}>
       <Row>
         <Col xs={8}>
           <MainJumbotron/>

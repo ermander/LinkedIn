@@ -3,12 +3,14 @@
   height: 40vmin;
   pointer-events: none;
   }
-
+.navbar .container{
+  padding: 0 15px !important;
+}
 .navbar{
-padding-right: 8%;
+/* padding-right: 8%;
 padding-left: 8%;
 padding-top: 0rem;
-padding-bottom: 0rem;
+padding-bottom: 0rem; */
 background-color: #283e4a;
 }
 .linked{
@@ -20,6 +22,12 @@ background-color: #283e4a;
   padding-top: 0rem;
   background-color: transparent;
  
+}
+.navbar .navIcon{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .left{
   outline: solid red 1px;
