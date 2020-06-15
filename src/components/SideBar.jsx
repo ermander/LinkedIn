@@ -29,7 +29,6 @@ const SideBar = () => {
                     <PageViewer />
                 </ul>
             </div>
-            <hr/>
         </Col>
     )
 }
