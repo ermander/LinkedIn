@@ -13,3 +13,13 @@
 .footer .logo {
  max-width: 8rem;
 }
+.quest a {
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: none;
+  line-height: 1.33333;
+}
+.quest a:hover {
+  color: #0073b1 !important;
+  cursor: pointer;
+}

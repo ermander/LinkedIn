@@ -68,26 +68,26 @@ export default class footer extends Component {
               </ListGroup.Item>
             </ListGroup>
           </Col>
-          <Col lg={3}>
-            <div className="d-flex">
+          <Col lg={3} className="quest">
+            <div className="d-flex mt-2">
               <BsQuestionCircle
-                style={{ color: "#0073b1", fontSize: "2.4em" }}
+                style={{ color: "#0073b1", fontSize: "2em" }}
               />
               <div>
-                <p className="m-0 pl-2" style={{ fontSize: "0.8em" }}>
+                <a className="m-0 pl-2" style={{ fontSize: "0.8em" }}>
                   Questions ?
-                </p>
+                </a>
                 <p className="m-0 pl-2" style={{ fontSize: "0.7em" }}>
                   Visit our Help center
                 </p>
               </div>
             </div>
             <div className="d-flex mt-2">
-              <FiSettings style={{ color: "#0073b1", fontSize: "2.4em" }} />
+              <FiSettings style={{ color: "#0073b1", fontSize: "2em" }} />
               <div>
-                <p className="m-0 pl-2" style={{ fontSize: "0.8em" }}>
+                <a className="m-0 pl-2" style={{ fontSize: "0.8em" }}>
                   Manage your account and privatcy ?
-                </p>
+                </a>
                 <p className="m-0 pl-2" style={{ fontSize: "0.7em" }}>
                   Visit our Help center
                 </p>
@@ -96,7 +96,7 @@ export default class footer extends Component {
           </Col>
           <Col lg={3}>
             <Form.Group controlId="exampleForm.ControlSelect1">
-              <Form.Label>Example select</Form.Label>
+              <Form.Label>Select Language</Form.Label>
               <Form.Control size="sm" as="select">
                 <option>English</option>
                 <option>Albanian</option>
