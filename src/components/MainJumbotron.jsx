@@ -4,13 +4,14 @@ import '../styles/MainJumbotron.css'
 import {IconContext} from 'react-icons'
 import {FaCamera,FaPencilAlt,FaEye} from 'react-icons/fa'
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import {withRouter} from 'react-router-dom'
 export class MainJumbotron extends Component {
   state={
-    data :[]
+    data :[],
+    username : this.props.match.params.id
   }
   componentDidMount =async()=>{
-    let response = await fetch('https://striveschool.herokuapp.com/api/profile/me',{
+    let response = await fetch(`https://striveschool.herokuapp.com/api/profile/${this.state.username}`,{
       method :'GET',
       headers : new Headers({
         'Authorization': 'Basic dXNlcjE4OlEyejVWN2hFRlU2SktSckU=',
@@ -88,4 +89,4 @@ export class MainJumbotron extends Component {
   }
 }
 
-export default MainJumbotron
+export default withRouter (MainJumbotron)
