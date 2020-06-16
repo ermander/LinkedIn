@@ -4,7 +4,6 @@ import '../styles/MainJumbotron.css'
 import {IconContext} from 'react-icons'
 import {FaCamera,FaPencilAlt,FaEye} from 'react-icons/fa'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Experiences from './Experiences'
 
 import {withRouter} from 'react-router-dom'
 export class MainJumbotron extends Component {
@@ -86,7 +85,6 @@ export class MainJumbotron extends Component {
             <div><FaPencilAlt/></div>
           </IconContext.Provider>
       </div>
-      <Experiences username={this.state.data.username}/>
       </>
     )
   }

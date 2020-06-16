@@ -6,7 +6,7 @@ import { FiSettings } from "react-icons/fi";
 export default class footer extends Component {
   render() {
     return (
-      <Container fluid className="footer">
+      <Container fluid className="footer my-5">
         <Row>
           <Col lg={2} className="logo">
             <img
@@ -74,10 +74,10 @@ export default class footer extends Component {
                 style={{ color: "#0073b1", fontSize: "2em" }}
               />
               <div>
-                <a className="m-0 pl-2" style={{ fontSize: "0.8em" }}>
+                <a className="m-0 pl-2" style={{ fontSize: "0.7em" }}>
                   Questions ?
                 </a>
-                <p className="m-0 pl-2" style={{ fontSize: "0.7em" }}>
+                <p className="m-0 pl-2" style={{ fontSize: "0.6em" }}>
                   Visit our Help center
                 </p>
               </div>
@@ -85,10 +85,10 @@ export default class footer extends Component {
             <div className="d-flex mt-2">
               <FiSettings style={{ color: "#0073b1", fontSize: "2em" }} />
               <div>
-                <a className="m-0 pl-2" style={{ fontSize: "0.8em" }}>
+                <a className="m-0 pl-2" style={{ fontSize: "0.7em" }}>
                   Manage your account and privatcy ?
                 </a>
-                <p className="m-0 pl-2" style={{ fontSize: "0.7em" }}>
+                <p className="m-0 pl-2" style={{ fontSize: "0.6em" }}>
                   Visit our Help center
                 </p>
               </div>
