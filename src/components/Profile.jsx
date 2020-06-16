@@ -56,7 +56,7 @@ export default class Profile extends Component {
           onsearch={(e) => {
             this.setState({searchKey:e.target.value.toLowerCase()})
             console.log(e.target.value)
-            if(e.target.value.length >2) {
+            if(e.target.value.length >1) {
               this.setState({show:true})
             }else {this.setState({show:false})}}
           }
