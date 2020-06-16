@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Container, Row, Col, Button, Form } from "react-bootstrap";
 import axios from "axios";
-import PostExperience from './PostExperience'
+//import PostExperience from './PostExperience'
 import { createBrowserHistory } from "history";
 
 export default class signin extends Component {
@@ -32,7 +32,7 @@ export default class signin extends Component {
   render() {
     return (
       <Container>
-        <PostExperience />
+        {/* <PostExperience /> */}
         <Row>
           <Col lg={{ span: 6, offset: 3 }} className="text-center">
             <img
