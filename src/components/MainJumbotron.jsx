@@ -4,7 +4,6 @@ import '../styles/MainJumbotron.css'
 import {IconContext} from 'react-icons'
 import {FaCamera,FaPencilAlt,FaEye} from 'react-icons/fa'
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import {withRouter} from 'react-router-dom'
 export class MainJumbotron extends Component {
   state={
@@ -61,7 +60,7 @@ export class MainJumbotron extends Component {
         <div id='profileInfo'>
            <div id='info' >
               <div id='personalInfo'>
-                <p>{this.state.data.name}</p>
+                <p>{this.state.data.name + " " + this.state.data.surname}</p>
                 <p>{this.state.data.title}</p>
                 <p>{this.state.data.area} -<span> 51 connections </span>-<span> Contact info </span></p>
               </div>

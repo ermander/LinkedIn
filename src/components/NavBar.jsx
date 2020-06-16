@@ -55,11 +55,7 @@ export default class NavBar extends Component {
               <div style={{ fontSize: "13px" }}>Home</div>
               
             </Nav.Link>
-            <Nav.Link className="navIcon" >
-              {" "}
-              <AiOutlineTeam style={{ fontSize: "20px" }} />
-              <div style={{ fontSize: "13px" }}>My Network</div>
-            </Nav.Link>
+            <Link className='navIcon nav-link' to='/myNetwork'> <AiOutlineTeam style={{fontSize:"20px"}}/><div style={{fontSize:"13px"}}>My Network</div></Link>
             <Nav.Link className="navIcon" >
               <RiBriefcaseLine style={{ fontSize: "20px" }} />
               <div style={{ fontSize: "13px" }}> Jobs</div>
@@ -73,7 +69,7 @@ export default class NavBar extends Component {
               <div style={{ fontSize: "13px" }}> Notifications</div>
             </Nav.Link>
             <Nav.Link className="navIcon" >
-              <Link to="/home">
+              <Link className='nav-link' to="/">
               <img
                 src={photo}
                 style={{ borderRadius: "50%", height: "20px", width: "20px" }}
