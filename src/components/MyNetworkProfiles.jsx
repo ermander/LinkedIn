@@ -1,7 +1,9 @@
 import React from 'react';
 import { Card , Button , Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const MyNetworkProfiles = (data) => {
+    console.log(data);
     return(
         <Col className='mb-3'>
             <Card className='h-100'>
@@ -11,7 +13,7 @@ const MyNetworkProfiles = (data) => {
                     <Card.Text>
                     {data.data.bio}
                     </Card.Text>
-                    <Button className='mt-auto' variant="primary">View profile</Button>
+                    <Link to={'/profile/'+data.data.username}><Button className='mt-auto' variant="primary">View profile</Button></Link>
                 </Card.Body>
             </Card>
         </Col>

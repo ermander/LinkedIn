@@ -69,7 +69,7 @@ export default class NavBar extends Component {
               <div style={{ fontSize: "13px" }}> Notifications</div>
             </Nav.Link>
             <Nav.Link className="navIcon" >
-              <Link to="/home">
+              <Link className='nav-link' to="/">
               <img
                 src={photo}
                 style={{ borderRadius: "50%", height: "20px", width: "20px" }}
