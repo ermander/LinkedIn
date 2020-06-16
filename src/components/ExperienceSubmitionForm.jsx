@@ -35,6 +35,7 @@ class LinkedInForm extends React.Component {
   }
   render(){
   return(
+    <div className='formOuterContainer'>
   <Container className='form mb-3'>
     <p className='display-4 text-center'>Add new experience</p>
     <Formik
@@ -166,15 +167,16 @@ class LinkedInForm extends React.Component {
             </Form.Group>
           </Form.Row>
 
-        <Button className='submitBtn' type="submit" 
+        <Button className='submitBtn' variant='outline-light' type="submit" 
         disabled={(Object.keys(errors).length === 0) ? null : this.state.hide}
-        >Submit form</Button>
+        >Save</Button>
         {console.log(errors)}
       </Form>
 
     )}
     </Formik>
   </Container>
+  </div>
   )
 
           }

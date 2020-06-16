@@ -84,3 +84,25 @@ background-color: #283e4a;
   padding-left: 0px;
   list-style-type: none;
 }
+.form{
+  max-width: 800px !important;
+  margin-top: 5vh;
+  border: 2px solid grey;
+  height: 480px;
+  /* border-radius: 20px; */
+  background-color: #1c8ee6;
+  box-shadow: 11px 10px 5px 0px rgba(0,0,0,0.75);
+}
+.form button{
+  margin-left: 45%;
+  color: white;
+  border-radius: 0;
+}
+#loadingAnimation{
+  position: absolute;
+  top: 10%;
+  left: 35%;
+}
+#loadingAnimation img{
+  height: 350px;
+}

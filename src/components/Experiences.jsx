@@ -1,16 +1,18 @@
 import React, { Component } from 'react'
-import {FaPlus,FaPencilAlt} from 'react-icons/fa'
+import {FaPlus} from 'react-icons/fa'
+import {RiPencilLine} from 'react-icons/ri'
 import {IconContext} from 'react-icons'
 import { Link } from 'react-router-dom'
 
 class Experiences extends Component {
   render() {
     return (
-      <div id='experiences'>
-        <div id='header'>
+      <>
+       {/* <div id='experiences'> */}
+        {/* <div id='header'>
           <p>Experience</p>
           <Link to='/addExperience'><FaPlus/></Link>
-        </div>
+        </div> */}
         <div id='content'>
           <div id='experience'>
             <div >
@@ -23,11 +25,12 @@ class Experiences extends Component {
             </div>
           </div>
           <IconContext.Provider value={{color : "#0073B1",marginTop:'5px'}}>
-            <div><FaPencilAlt/></div>
+            <div><RiPencilLine/></div>
           </IconContext.Provider>
         </div>
         <hr style={{margin:'0'}}></hr>
-      </div>
+     {/* </div> */}
+      </>
     )
   }
 }

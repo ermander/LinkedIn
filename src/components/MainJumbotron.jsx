@@ -3,6 +3,7 @@ import {Jumbotron,Container,Button,Dropdown,DropdownButton} from 'react-bootstra
 import '../styles/MainJumbotron.css'
 import {IconContext} from 'react-icons'
 import {FaCamera,FaPencilAlt,FaEye} from 'react-icons/fa'
+import {RiPencilLine} from 'react-icons/ri'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {withRouter} from 'react-router-dom'
 export class MainJumbotron extends Component {
@@ -53,7 +54,7 @@ export class MainJumbotron extends Component {
             </DropdownButton>
             <Button variant="outline-info">More..</Button>
             <IconContext.Provider value={{className : "editIcon"}}>
-              <div><FaPencilAlt/></div>
+              <div><RiPencilLine/></div>
             </IconContext.Provider>
           </div>
         </div>
@@ -74,7 +75,7 @@ export class MainJumbotron extends Component {
             <p>See all details</p>
           </div>
           <IconContext.Provider value={{className : "editIcon"}}>
-            <div><FaPencilAlt/></div>
+            <div><RiPencilLine/></div>
           </IconContext.Provider>
         </div>
         <div id='presentBelowSection'>
@@ -90,7 +91,7 @@ export class MainJumbotron extends Component {
             <p>working on Computational methods in Engineering</p>
           </div>
           <IconContext.Provider value={{className : "editIcon"}}>
-            <div><FaPencilAlt/></div>
+            <div><RiPencilLine/></div>
           </IconContext.Provider>
       </div>
       </>
