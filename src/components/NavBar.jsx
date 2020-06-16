@@ -7,6 +7,7 @@ import {MdMessage} from 'react-icons/md'
 import {IoMdNotificationsOutline} from 'react-icons/io'
 import photo from '../images/photo.png'
 import {BsGrid3X3GapFill} from 'react-icons/bs'
+import { Link } from 'react-router-dom';
 export default class NavBar extends Component {
     
      
@@ -20,7 +21,7 @@ export default class NavBar extends Component {
               </Form>
               <Nav className="ml-auto  ">
                 <Nav.Link className='navIcon' href="#home"  ><AiOutlineHome  style={{fontSize:"20px"}} /><div style={{fontSize:"13px"}}>Home</div></Nav.Link>
-                <Nav.Link className='navIcon' href="#network"  > <AiOutlineTeam style={{fontSize:"20px"}}/><div style={{fontSize:"13px"}}>My Network</div></Nav.Link>
+                <Link className='navIcon nav-link' to='/myNetwork'> <AiOutlineTeam style={{fontSize:"20px"}}/><div style={{fontSize:"13px"}}>My Network</div></Link>
                 <Nav.Link className='navIcon' href="#jobs"  ><RiBriefcaseLine  style={{fontSize:"20px"}}/><div style={{fontSize:"13px"}}> Jobs</div></Nav.Link>
                 <Nav.Link className='navIcon' href="#messaging" ><MdMessage style={{fontSize:"20px"}}/><div style={{fontSize:"13px"}}> Messaging</div></Nav.Link>
                 <Nav.Link className='navIcon' href="#notifications"  ><IoMdNotificationsOutline style={{fontSize:"20px"}}/><div style={{fontSize:"13px"}}> Notifications</div></Nav.Link>
