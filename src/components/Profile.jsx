@@ -18,6 +18,15 @@ export default class Profile extends Component {
   componentDidMount() {
     this.fetchExperience();
   }
+  componentDidUpdate = () => {
+    if(this.props.match.params.id !== this.state.username){
+      console.log('updated');
+      this.setState({username: this.props.match.params.id}, async () => {
+        await this.fetchExperience()
+        console.log(this.state)
+      })
+    }
+  }
   
   async fetchExperience() {
     let experience = {
@@ -54,13 +63,12 @@ export default class Profile extends Component {
           users ={this.state.users.map((element,index) => {
 
               if(element.name.toLowerCase().includes(this.state.searchKey)){
-                console.log(element.name)
               return (
                 <Dropdown.Item 
-                key={index} 
+                key={index}
+                onSelect={() => this.props.history.push(`/profile/${element.username}`)}
                 eventKey={index}>{element.name}</Dropdown.Item>
               )}
-
           })}
         />
         <Container style={{ marginTop: "58px" }}>
