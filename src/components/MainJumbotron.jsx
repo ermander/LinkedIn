@@ -9,9 +9,19 @@ import {withRouter} from 'react-router-dom'
 export class MainJumbotron extends Component {
   state={
     data :[],
-    username : this.props.match.params.id
+    username : this.props.username
   }
   componentDidMount =async()=>{
+    this.fetchData()
+  }
+
+  componentDidUpdate(){
+
+    if(this.state.username !== this.props.username){
+      this.setState({username:this.props.username},()=>{this.fetchData() })
+    }
+  }
+  async fetchData(){
     let response = await fetch(`https://striveschool.herokuapp.com/api/profile/${this.state.username}`,{
       method :'GET',
       headers : new Headers({
@@ -21,7 +31,6 @@ export class MainJumbotron extends Component {
     })
     let parsedJson = await response.json()
     this.setState({data : parsedJson})
-    console.log(parsedJson)
   }
   render() {
     return (

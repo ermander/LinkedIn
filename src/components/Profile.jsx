@@ -18,6 +18,7 @@ export default class Profile extends Component {
   componentDidMount() {
     this.fetchExperience();
   }
+
   componentDidUpdate = () => {
     if(this.props.match.params.id !== this.state.username){
       console.log('updated');
@@ -74,7 +75,7 @@ export default class Profile extends Component {
         <Container style={{ marginTop: "58px" }}>
           <Row>
             <Col xs={8}>
-              <MainJumbotron />
+              <MainJumbotron username={this.props.match.params.id}/>
               {this.state.experiences.map((element) => {
                 return (
                   <Experiences
