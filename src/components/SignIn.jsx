@@ -1,30 +1,32 @@
 import React, { Component } from "react";
 import { Container, Row, Col, Button, Form } from "react-bootstrap";
 import axios from "axios";
-import { createBrowserHistory  } from 'history'
+import { createBrowserHistory } from "history";
 
 export default class signin extends Component {
   state = {
     username: "",
     password: "",
-    users:[],
+    users: [],
+    uValid: false,
+    pValid: null,
   };
-  
-  componentDidMount(){
-      this.fetchUsers()
+
+  componentDidMount() {
+    this.fetchUsers();
   }
-  async fetchUsers () {
-    let gets={
-        method : 'GET',
-        url:'https://striveschool.herokuapp.com/api/profile/',
-        headers : {
-            Authorization: "Basic " + btoa("user7:3UU5dYFvenRuRP7E"),
-        },
+  async fetchUsers() {
+    let gets = {
+      method: "GET",
+      url: "https://striveschool.herokuapp.com/api/profile/",
+      headers: {
+        Authorization: "Basic " + btoa("user7:3UU5dYFvenRuRP7E"),
+      },
+    };
+    let users = await axios(gets);
+    this.setState({ users: users.data });
+    console.log(users);
   }
-  let users= await axios(gets)
-  this.setState({users:users.data})
-  console.log(users)
-}
 
   render() {
     return (
@@ -50,7 +52,18 @@ export default class signin extends Component {
           <Col lg={{ span: 4, offset: 4 }} className="text-center">
             <Form.Group style={{ marginTop: "0" }} controlId="ass">
               <Form.Control
+                isValid={this.state.uValid}
                 onChange={(e) => {
+                  this.state.users.map((element) => {
+                    if (e.target.value.length > 2) {
+                      if (element.name === e.target.value) {
+                        this.setState({ uValid: true,});
+                        console.log(this.state.uInvalid);
+                      } 
+                    } else {
+                      this.setState({ uValid: false,});
+                    }
+                  });
                   this.setState({ username: e.target.value });
                 }}
                 className="mb-3"
@@ -60,7 +73,19 @@ export default class signin extends Component {
               />
               <Form.Control
                 size="lg"
+                isValid={this.state.pValid}
                 onChange={(e) => {
+                  this.state.users.map((element) => {
+                    if (e.target.value.length > 2) {
+                      if (element.surname === e.target.value) {
+                        this.setState({ pValid : true});
+                        console.log(this.state.pValid);
+                      } 
+                    } else {
+                      this.setState({ pValid: null, });
+                      console.log(this.state.pValid)
+                    }
+                  });
 
                   this.setState({ password: e.target.value });
                 }}
@@ -68,22 +93,24 @@ export default class signin extends Component {
                 placeholder="Password"
               />
             </Form.Group>
-            <Button className="w-100" variant="primary"
-            onClick={()=>{
-                this.state.users.map(element => {
-                    let ch = false
-                    if(element.name === this.state.username && element.surname === this.state.password)
-                    {
-                        ch=true
-                    }
-                    if(ch){
-                        this.props.history.push(`/profile/${element.username}`) 
-                    } else{
-
-                    }
-                })
-            }}
-
+            <Button
+              className="w-100"
+              variant="primary"
+              onClick={() => {
+                this.state.users.map((element) => {
+                  let ch = false;
+                  if (
+                    element.name === this.state.username &&
+                    element.surname === this.state.password
+                  ) {
+                    ch = true;
+                  }
+                  if (ch) {
+                    this.props.history.push(`/profile/${element.username}`);
+                  } else {
+                  }
+                });
+              }}
             >
               Sign in
             </Button>
