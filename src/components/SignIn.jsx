@@ -108,7 +108,7 @@ export default class signin extends Component {
                     ch = true;
                   }
                   if (ch) {
-                    this.props.history.push(`/profile/${element.username}`);
+                    this.props.history.push(`/feed/${element.username}`);
                   } else {
                   }
                 });

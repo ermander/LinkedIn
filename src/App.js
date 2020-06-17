@@ -6,6 +6,7 @@ import Signin from './components/SignIn'
 import {BrowserRouter as Router,Switch,Route} from 'react-router-dom'
 import MyNetwork from './components/MyNetwork'; 
 import ExperienceSubmitionForm from './components/ExperienceSubmitionForm'
+import Homepage from './components/Homepage'
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
     <>
     <Router>
       <Switch>
+        <Route path='/feed/:id' component={Homepage}/>
         <Route exact path='/' component={Signin}/>
         <Route path='/profile/:id' component={Profile}/>
         <Route path='/myNetwork' component={MyNetwork}/>
