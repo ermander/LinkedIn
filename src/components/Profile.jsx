@@ -10,7 +10,7 @@ import {Link} from 'react-router-dom';
 import {FaPlus} from 'react-icons/fa';
 import NewsFeedRightSidebar from './NewsFeedRightSidebar';
 
-export default class Profile extends Component {
+class Profile extends Component {
   state = {
     username: this.props.match.params.id,
     users :[],
@@ -32,7 +32,7 @@ export default class Profile extends Component {
       })
     }
   }
-  
+
   async fetchExperience() {
     let experience = {
       method: "GET",
@@ -56,7 +56,7 @@ export default class Profile extends Component {
   render() {
     return (
       <>
-        <NavBar 
+        <NavBar
           onsearch={(e) => {
             this.setState({searchKey:e.target.value.toLowerCase()})
             console.log(e.target.value)
@@ -69,7 +69,7 @@ export default class Profile extends Component {
 
               if(element.name.toLowerCase().includes(this.state.searchKey)){
               return (
-                <Dropdown.Item 
+                <Dropdown.Item
                 key={index}
                 onSelect={() => this.props.history.push(`/profile/${element.username}`)}
                 eventKey={index}>{element.name}</Dropdown.Item>
@@ -109,3 +109,5 @@ export default class Profile extends Component {
     );
   }
 }
+
+export default Profile;
