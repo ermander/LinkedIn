@@ -86,7 +86,7 @@ background-color: #283e4a;
 }
 
 .newsFeedRightSidebar{
-  padding: 0px 0px;
+  padding: 0px !important;
 }
 
 .newsFeedRightSidebar ul{
