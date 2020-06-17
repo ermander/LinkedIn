@@ -9,7 +9,7 @@ class NewsFeedRightSidebar extends React.Component {
         return(
             <Container className="sticky-top">
                 <Row>
-                    <Col className='col-12' style={{border: '2px solid #DADDDF'}}>
+                    <Col className='col-12' style={{border: '2px solid grey'}}>
                             <div className='d-flex justify-content-between align-items-center my-3'>
                                 <span style={{fontSize: '16px'}}> Add to your feedback </span> <GoInfo />
                             </div>
@@ -42,14 +42,14 @@ class NewsFeedRightSidebar extends React.Component {
                             </Row>
                         <span style={{fontSize: '14px', color: "#0073b1"}}>View all recommendations</span>
                     </Col>
-                    
-                    <Col className='col-12 mt-2 ' style={{padding: '0px', border: '2px solid #DADDDF'}}>
+                    {/* //#DADDDF */}
+                    <Col className='col-12 mt-2 ' style={{padding: '0px', border: '2px solid grey'}}>
                         <div className='banerContainer'>
                             <Image src='https://via.placeholder.com/300' style={{width: 100 + "%"}}/>
                         </div>
                     </Col>
 
-                    <Col className='col-12 mt-2 mb-3 ' style={{border: '2px solid #DADDDF'}}>
+                    <Col className='col-12 mt-2 mb-3 ' style={{border: '2px solid grey'}}>
                             <div className='d-flex justify-content-between align-items-center my-3'>
                                 <span style={{fontSize: '16px'}}> LinkedIn Learning </span> <GoInfo />
                             </div>
@@ -63,7 +63,7 @@ class NewsFeedRightSidebar extends React.Component {
                             </Row>
                         <span style={{fontSize: '11px'}}>What field is video from</span>
                     </Col>
-                    <Col className='col-12 newsFeedRightSidebar pt-2 '  style={{borderTop: '2px solid #DADDDF'}}>
+                    <Col className='col-12 newsFeedRightSidebar pt-2 '  style={{borderTop: '2px solid grey'}}>
                         <ul>
                             <li className='d-flex justify-content-around'>
                                 <li>About</li>

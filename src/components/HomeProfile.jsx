@@ -10,7 +10,7 @@ export default class homeprofile extends Component {
 
 render(){
     return(
-<div className="border border-secondary">
+<div className=" border-secondary" style={{border:"solid 2px grey"}}>
               <div
                 className="border-bottom border-secondary"
                 style={{
