@@ -85,13 +85,18 @@ background-color: #283e4a;
   list-style-type: none;
 }
 
+.newsFeedRightSidebar{
+  padding: 0px 0px;
+}
+
 .newsFeedRightSidebar ul{
   padding-left: 0px;
   list-style-type: none;
 }
 
 .newsFeedRightSidebar ul li{
-  
+  font-size: 12px;
+  color: #485d69;
 }
 
 .form{
