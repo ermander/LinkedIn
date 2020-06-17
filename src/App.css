@@ -56,4 +56,31 @@ background-color: #283e4a;
 .quest a:hover {
   color: #0073b1 !important;
   cursor: pointer;
+<<<<<<< Updated upstream
+=======
+}
+
+.sideBar span{
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(0,0,0,.6);
+  margin-right: auto;
+}
+
+.sideBar h2{
+  font-size: 16px;
+  line-height: 24px;
+  text-align: left;
+  font-weight: 400;
+}
+
+.sideBar ul{
+  padding-left: 0px;
+  list-style-type: none;
+}
+.mouse :hover{
+background-color: grey;
+
+
+>>>>>>> Stashed changes
 }
