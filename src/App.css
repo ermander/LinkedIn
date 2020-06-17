@@ -90,6 +90,10 @@ background-color: #283e4a;
   list-style-type: none;
 }
 
+.newsFeedRightSidebar ul li{
+  
+}
+
 .form{
   max-width: 800px !important;
   margin-top: 5vh;
