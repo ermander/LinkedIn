@@ -6,8 +6,9 @@ import { Container, Row, Col,Dropdown } from "react-bootstrap";
 import NavBar from "./NavBar";
 import Experiences from "./Experiences";
 import axios from "axios";
-import {Link} from 'react-router-dom'
-import {FaPlus} from 'react-icons/fa'
+import {Link} from 'react-router-dom';
+import {FaPlus} from 'react-icons/fa';
+import NewsFeedRightSidebar from './NewsFeedRightSidebar';
 
 export default class Profile extends Component {
   state = {
@@ -101,6 +102,7 @@ export default class Profile extends Component {
             <SideBar />
           </Row>
           <Footer />
+          <NewsFeedRightSidebar />
         </Container>
   }
       </>
