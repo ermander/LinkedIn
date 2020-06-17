@@ -84,6 +84,12 @@ background-color: #283e4a;
   padding-left: 0px;
   list-style-type: none;
 }
+
+.newsFeedRightSidebar ul{
+  padding-left: 0px;
+  list-style-type: none;
+}
+
 .form{
   max-width: 800px !important;
   margin-top: 5vh;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Col , Row , Button , Image } from 'react-bootstrap';
 import { GoInfo , GoPlus } from 'react-icons/go';
-import { BsChevronCompactDown } from 'react-icons/bs'
+import { BsChevronCompactDown } from 'react-icons/bs';
 
 class NewsFeedRightSidebar extends React.Component {
     render(){
