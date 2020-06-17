@@ -102,7 +102,6 @@ class Profile extends Component {
             <SideBar />
           </Row>
           <Footer />
-          <NewsFeedRightSidebar />
         </Container>
   }
       </>

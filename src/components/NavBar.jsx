@@ -29,11 +29,13 @@ export default class NavBar extends Component {
         variant="dark"
       >
         <Container>
-          <Navbar.Brand href="#home">
+          <Navbar.Brand>
+            <Link to='/feed/me'>
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Linkedin_icon.svg/1200px-Linkedin_icon.svg.png"
               className="linked"
-            ></img>{" "}
+            />
+            </Link>
           </Navbar.Brand>
           <Form>
             <Dropdown>
@@ -50,11 +52,11 @@ export default class NavBar extends Component {
             </Dropdown>
           </Form>
           <Nav className="ml-auto  ">
-            <Nav.Link className="navIcon" to="/Home">
+          <Link className="nav-link navIcon" to='/feed/me'>
               <AiOutlineHome style={{ fontSize: "20px" }} />
               <div style={{ fontSize: "13px" }}>Home</div>
-              
-            </Nav.Link>
+
+            </Link>
             <Link className='navIcon nav-link' to='/myNetwork'> <AiOutlineTeam style={{fontSize:"20px"}}/><div style={{fontSize:"13px"}}>My Network</div></Link>
             <Nav.Link className="navIcon" >
               <RiBriefcaseLine style={{ fontSize: "20px" }} />

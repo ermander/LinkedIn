@@ -8,7 +8,7 @@ export default class postModal extends Component {
         <Modal
           show={this.props.show}
           onHide={this.props.handleClose}
-          animation={false}
+          animation={true}
         >
           <Modal.Header closeButton>
             <h5>Create a post</h5>
@@ -29,7 +29,7 @@ export default class postModal extends Component {
                 </Col>
               </Row>
               <Row className="mt-2">
-              <Form.Control as="textarea" rows="5" />
+              <Form.Control onChange={this.props.onchange} as="textarea" rows="5" />
               </Row>
             </Container>
           </Modal.Body>

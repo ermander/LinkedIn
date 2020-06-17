@@ -2,16 +2,36 @@ import React, { Component } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import HomeProfile from "./HomeProfile";
 import Modal from "./Modal";
+import NavBar from './NavBar'
 import axios from "axios";
+import Feed from "./Feed";
+import NewsFeedRightSidebar from "./NewsFeedRightSidebar";
+import Leftsidebar from "./LeftSidebar";
 
 export default class Homepage extends Component {
   state = {
     showModal: false,
     user: [],
     posts: [],
+    postsText :''
   };
   componentDidMount() {
     this.fetchData();
+  }
+
+  async postData(){
+    let data1 ={text:this.state.postsText}
+    let postData = {
+      method: "POST",
+      url: `https://striveschool.herokuapp.com/api/posts/`,
+      headers: {
+        Authorization: "Basic " + btoa("user7:3UU5dYFvenRuRP7E"),
+      },
+      data:data1
+    };
+    let data = await axios(postData)
+    alert('Post has been posted')
+
   }
 
   async fetchData() {
@@ -38,38 +58,37 @@ export default class Homepage extends Component {
 
   render() {
     return (
-      <Container className="mt-5">
+      <>
+      <NavBar />
+      <Container className="mt-5 pt-5">
         <Row>
           <Col lg={2}>
             <HomeProfile name={this.state.user.name} />
+            <Leftsidebar />
           </Col>
           <Col lg={7}>
-            <Container>
-              <Row>
-                <Col lg={6}>
-                  <a onClick={() => this.setState({ showModal: true })}>
-                    Start a Post
-                  </a>
-                  <Modal
-                  name={this.state.user.name}
-                    show={this.state.showModal}
-                    handleClose={() => this.setState({ showModal: false })}
-                  />
-                </Col>
-                <Col lg={2}>Cam</Col>
-                <Col lg={2}>CAM</Col>
-                <Col lg={2}>DOC</Col>
-              </Row>
-              <Row>
-                <Col>
-                  <p>Write a post on Linked In</p>
-                </Col>
-              </Row>
-            </Container>
+            <Feed
+              postButton={() => {
+                this.setState({ showModal: true });
+              }}
+            />
+            <Modal
+            
+            onchange={(e)=>this.setState({postsText:e.target.value},console.log(this.state.postsText))}
+              name={this.state.user.name}
+              handleClose={() => {
+                this.setState({ showModal: false })
+                this.postData()
+              }}
+              show={this.state.showModal}
+            />
           </Col>
-          <Col lg={3}></Col>
+          <Col lg={3}>
+            <NewsFeedRightSidebar />
+          </Col>
         </Row>
       </Container>
+      </>
     );
   }
 }

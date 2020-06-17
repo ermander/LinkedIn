@@ -26,7 +26,7 @@ export class Feed extends Component {
         return (
             <Container fluid >
                 <div id='writePost'>
-                    <div>
+                    <div onClick={this.props.postButton}>
                         <IconContext.Provider value={{className:'writePostIcons'}}>
                             <a><FiEdit/></a>
                         </IconContext.Provider>
@@ -45,7 +45,7 @@ export class Feed extends Component {
                     </div>
                 </div>
                 <div id='writePostFooter'>
-                    <p>Write an article on LinkedIn</p>
+                    <p><a href="">Write an article</a> on LinkedIn</p>
                 </div>
                 <hr></hr>
                 {this.state.posts.map(element =>{

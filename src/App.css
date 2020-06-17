@@ -135,6 +135,11 @@ background-color: #283e4a;
 #writePost > div:first-of-type {
   margin: auto 20px;
 }
+#writePost > div:first-of-type:hover{
+  cursor: pointer;
+  color : #0073b1;
+  
+}
 #writePost > div:first-of-type > a{
   padding: 0 10px;
 }
@@ -158,6 +163,8 @@ background-color: #283e4a;
   border: 2px solid #DADDDF;
   border-top: none;
   box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.75);
+  font-size: 0.8em;
+  color :
 }
 #postHeader{
   display: flex;
@@ -180,7 +187,6 @@ background-color: #283e4a;
 #postBody img{
   height: 400px;
   width: 80vw;
-  margin-left: 7vw;
 }
 #postFooter > div:nth-of-type(2){
   display: flex;

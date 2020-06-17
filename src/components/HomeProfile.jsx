@@ -26,7 +26,7 @@ render(){
                   position: "absolute",
                   maxWidth: "3em",
                   left: "39%",
-                  top: "10%",
+                  top: "1.5em",
                 }}
                 className="img-fluid rounded-circle"
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png"
