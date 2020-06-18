@@ -22,7 +22,7 @@ export class Posts extends Component {
                     </div>
                 </div>
                 <div>
-                    <BsThreeDots/>
+                    <BsThreeDots show={false} onClick={this.props.userName}/>
                 </div>
             </div>
             <div id='postBody'>

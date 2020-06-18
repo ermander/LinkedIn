@@ -5,10 +5,12 @@ import {GrCamera} from 'react-icons/gr'
 import {IconContext} from 'react-icons'
 import {AiOutlineFileText} from 'react-icons/ai'
 import Posts from './Posts'
+import UploadPic from '../UploadPic'
 
 export class Feed extends Component {
     state ={
-        posts :[]
+        posts :[],
+        username:[]
     }
     componentDidMount = async()=>{
         let response = await fetch('https://striveschool.herokuapp.com/api/posts/',{
@@ -18,8 +20,16 @@ export class Feed extends Component {
                 'Content-type': "application/json"
               })
         })
+        let user = await fetch('https://striveschool.herokuapp.com/api/profile/me',{
+            method :'GET',
+            headers : new Headers({
+                'Authorization': 'Basic dXNlcjE4OlEyejVWN2hFRlU2SktSckU=',
+                'Content-type': "application/json"
+              })
+        })
+        let userName = await user.json()
         let posts = await response.json()
-        this.setState({posts})
+        this.setState({posts,username:userName},()=>console.log(this.state.username))
         console.log(this.state.posts)
     }
     render() {
