@@ -74,11 +74,11 @@ export default class Homepage extends Component {
       <NavBar />
       <Container className="mt-5 pt-5">
         <Row>
-          <Col lg={2}>
+          <Col lg={3}>
             <HomeProfile name={this.state.user.name} />
             <Leftsidebar />
           </Col>
-          <Col lg={7}>
+          <Col lg={6}>
             <Feed
               postButton={() => {
                 this.setState({ showModal: true });
