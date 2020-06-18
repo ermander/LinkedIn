@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Container} from 'react-bootstrap'
+import {Container,Modal,Button} from 'react-bootstrap'
 import {FiEdit,FiVideo} from 'react-icons/fi'
 import {GrCamera} from 'react-icons/gr'
 import {IconContext} from 'react-icons'
@@ -8,7 +8,8 @@ import Posts from './Posts'
 
 export class Feed extends Component {
     state ={
-        posts :[]
+        posts :[],
+        show : false
     }
     componentDidMount = async()=>{
         let response = await fetch('https://striveschool.herokuapp.com/api/posts/',{
@@ -22,6 +23,13 @@ export class Feed extends Component {
         this.setState({posts})
         console.log(this.state.posts)
     }
+    handleShow =()=>{
+        this.setState({show:true})
+    }
+    handleClose =()=>{
+        this.setState({show:false})
+    }
+    
     render() {
         return (
             <Container fluid  >
