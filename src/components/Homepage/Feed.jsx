@@ -97,6 +97,7 @@ export class Feed extends Component {
                 bio={element.user.bio}
                 text={element.text}
                 key={i}
+                date ={element.updatedAt.slice(0,10)}
               />
             );
           })
