@@ -5,6 +5,7 @@ import { GrCamera } from "react-icons/gr";
 import { IconContext } from "react-icons";
 import { AiOutlineFileText } from "react-icons/ai";
 import Posts from "./Posts";
+import '../../styles/HomePage.css'
 // import UploadPic from '../UploadPic'
 
 export class Feed extends Component {
@@ -83,7 +84,7 @@ export class Feed extends Component {
           </p>
         </div>
         <hr></hr>
-        {this.state.posts.map((element) => {
+        {this.state.posts.map((element , i) => {
           return (
             <Posts
               user={this.state.username.name}
@@ -92,6 +93,7 @@ export class Feed extends Component {
               image={element.image}
               bio={element.user.bio}
               text={element.text}
+              key={i}
             />
           );
         })}

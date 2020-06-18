@@ -2,7 +2,7 @@ import React from 'react';
 import { Col , Row , Button , Image, Container } from 'react-bootstrap';
 import { GoInfo , GoPlus } from 'react-icons/go';
 import { BsChevronCompactDown } from 'react-icons/bs';
-
+import '../../styles/HomePage.css'
 
 class NewsFeedRightSidebar extends React.Component {
     render(){
@@ -65,20 +65,20 @@ class NewsFeedRightSidebar extends React.Component {
                     </Col>
                     <Col className='col-12 newsFeedRightSidebar pt-2 '  style={{borderTop: '2px solid grey'}}>
                         <ul>
-                            <li className='d-flex justify-content-around'>
+                            <div className='d-flex justify-content-around'>
                                 <li>About</li>
                                 <li>Accessibility</li>
                                 <li>Help</li>
-                            </li>
-                            <li className='d-flex justify-content-around'>
+                            </div>
+                            <div className='d-flex justify-content-around'>
                                 <li>Privacy & Terms <BsChevronCompactDown /></li>
                                 <li>Ad Choices</li>
                                 <li>Advertising</li>
-                            </li>
-                            <li className='d-flex justify-content-around'>
+                            </div>
+                            <div className='d-flex justify-content-around'>
                                 <li>Business Services <BsChevronCompactDown /></li>
                                 <li>Get the LinkedIn app</li>
-                            </li>
+                            </div>
                             <li className='d-flex justify-content-around'>More</li>
                         </ul>
                     </Col>

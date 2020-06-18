@@ -7,13 +7,14 @@ import axios from "axios";
 import Feed from "./Feed";
 import NewsFeedRightSidebar from "./NewsFeedRightSidebar";
 import Leftsidebar from "./LeftSidebar";
-
+import '../../styles/HomePage.css'
 export default class Homepage extends Component {
   state = {
     showModal: false,
     user: [],
     posts: [],
-    postsText :''
+    postsText :'',
+    inputFile:null
   };
   componentDidMount() {
     this.fetchData();
@@ -30,6 +31,17 @@ export default class Homepage extends Component {
       data:data1
     };
     let data = await axios(postData)
+    let inputFile= {
+      method: "POST",
+      url: await `https://striveschool.herokuapp.com/api/posts/${data.data._id}`,
+      headers: {
+        Authorization: "Basic " + btoa("user7:3UU5dYFvenRuRP7E"),
+      },
+      data:this.state.inputFile
+    };
+    let input = await axios(inputFile)
+
+    
     alert('Post has been posted')
 
   }
@@ -81,6 +93,11 @@ export default class Homepage extends Component {
                 this.postData()
               }}
               show={this.state.showModal}
+              file={(event) => {
+                console.log(event.target.files[0]);
+                const formData = new FormData();
+                formData.append("post", event.target.files[0]);
+                this.setState({inputFile:formData})}}
             />
           </Col>
           <Col lg={3}>

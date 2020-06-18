@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Modal, Button, Container,Row,Col,Form } from "react-bootstrap";
-import './style/style.css'
+import { Modal, Button, Container, Row, Col, Form } from "react-bootstrap";
+import '../../styles/HomePage.css'
 export default class postModal extends Component {
   render() {
     return (
@@ -18,7 +18,6 @@ export default class postModal extends Component {
               <Row>
                 <Col className="d-flex">
                   <img
-                   
                     className="img-fluid mod"
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png"
                     alt=""
@@ -29,11 +28,24 @@ export default class postModal extends Component {
                 </Col>
               </Row>
               <Row className="mt-2">
-              <Form.Control onChange={this.props.onchange} as="textarea" rows="5" />
+                <Form.Control
+                  onChange={this.props.onchange}
+                  as="textarea"
+                  rows="5"
+                />
               </Row>
             </Container>
           </Modal.Body>
           <Modal.Footer>
+            <Form>
+              <Form.Group>
+                <Form.File
+                  id="exampleFormControlFile1"
+                  label="Example file input"
+                  onChange={this.props.file}
+                />
+              </Form.Group>
+            </Form>
             <Button variant="primary" onClick={this.props.handleClose}>
               Post
             </Button>

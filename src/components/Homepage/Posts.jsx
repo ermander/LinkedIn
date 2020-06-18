@@ -5,7 +5,7 @@ import { AiTwotoneLike } from "react-icons/ai";
 import { IconContext } from "react-icons";
 import { MdComment } from "react-icons/md";
 import { FaShare } from "react-icons/fa";
-import './style/style.css'
+import '../../styles/HomePage.css'
 export class Posts extends Component {
   state = { show: false,image: 'https://static.toiimg.com/thumb/msid-44945488,width-748,height-499,resizemode=4,imgsize-291921/Nice-in-pictures.jpg', };
   
@@ -30,7 +30,7 @@ export class Posts extends Component {
             {this.props.user === this.props.name ? (
               <>
                 <BsThreeDots
-                  show={false}
+                  show={"false"}
                   onClick={() => {
                     this.setState({ show: !this.state.show }, () =>
                       console.log(this.state.show)
