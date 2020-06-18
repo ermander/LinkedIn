@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Jumbotron,Container,Button,Dropdown,DropdownButton} from 'react-bootstrap'
+import {Jumbotron,Container,Button,Dropdown,DropdownButton,Modal,Form} from 'react-bootstrap'
 import {IconContext} from 'react-icons'
 import {FaCamera,FaPencilAlt,FaEye} from 'react-icons/fa'
 import {RiPencilLine} from 'react-icons/ri'
@@ -8,10 +8,25 @@ import {withRouter} from 'react-router-dom'
 export class MainJumbotron extends Component {
   state={
     data :[],
-    username : this.props.username
+    username : this.props.username,
+    show : false,
+    user : ''
   }
   componentDidMount =async()=>{
     this.fetchData()
+    let response = await fetch(
+      "https://striveschool.herokuapp.com/api/profile/me",
+      {
+        method: "GET",
+        headers: new Headers({
+          Authorization: "Basic " + btoa("user7:3UU5dYFvenRuRP7E"),
+          "Content-type": "application/json",
+        }),
+      }
+    )
+    let parsedJson = await response.json()
+    let user = parsedJson.username
+    this.setState({user})
   }
 
   componentDidUpdate(){
@@ -31,6 +46,12 @@ export class MainJumbotron extends Component {
     let parsedJson = await response.json()
     this.setState({data : parsedJson})
   }
+  verifyProfile = async()=>{
+    console.log(this.state.data)
+    if(this.state.data.username === this.state.user){
+      this.setState({show:true})
+    }
+  }
   render() {
     return (
       <>
@@ -43,7 +64,10 @@ export class MainJumbotron extends Component {
         </div>
         <div id='profileSection'>
           <div >
-            <img src="https://capenetworks.com/static/images/testimonials/user-icon.svg" alt=""/>
+            {this.state.data.image ?<img onClick={this.verifyProfile} src={this.state.data.image} alt=""/> 
+          : <img onClick={this.verifyProfile} src="https://capenetworks.com/static/images/testimonials/user-icon.svg" alt=""/>  
+          }
+            {/* <img src="https://capenetworks.com/static/images/testimonials/user-icon.svg" alt=""/> */}
           </div>
           <div id='profileButtons'>
             <DropdownButton id="dropdown-basic-button" title="Add profile section">
@@ -93,6 +117,47 @@ export class MainJumbotron extends Component {
             <div><RiPencilLine/></div>
           </IconContext.Provider>
       </div>
+
+      <Modal
+        show={this.state.show}
+        onHide={() => this.setState({ show: false })}
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Edit picture</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form>
+            <Form.Group>
+              <Form.File
+                label="Example file input"
+                onChange={
+                  (event) => {
+                      console.log(event.target.files[0]);
+                      const formData = new FormData();
+                      formData.append("profile", event.target.files[0]);
+                      console.log(formData);
+                      fetch( `https://striveschool.herokuapp.com/api/profile/${this.state.user}/picture`,
+                        {
+                          method: "POST",
+                          body: formData,
+                          headers: {
+                          Authorization: "Basic " + btoa("user7:3UU5dYFvenRuRP7E")}
+                        }
+                          ).then(element=> console.log(element.json()))
+                    }}                         
+              />
+            </Form.Group>
+          </Form>
+        </Modal.Body>
+            <Modal.Footer>
+              <Button
+                variant="primary"
+                onClick={(e) => this.setState({ show: false })}
+              >
+                Save Changes
+              </Button>
+            </Modal.Footer>
+      </Modal>
       </>
     )
   }
