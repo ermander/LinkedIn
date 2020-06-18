@@ -78,7 +78,7 @@ export default class Homepage extends Component {
             <HomeProfile name={this.state.user.name} />
             <Leftsidebar />
           </Col>
-          <Col lg={6}>
+          <Col lg={6} style={{paddingLeft: '0px'}}>
             <Feed
               postButton={() => {
                 this.setState({ showModal: true });
@@ -100,7 +100,7 @@ export default class Homepage extends Component {
                 this.setState({inputFile:formData})}}
             />
           </Col>
-          <Col lg={3}>
+          <Col lg={3} style={{paddingLeft: '0px'}}>
             <NewsFeedRightSidebar />
           </Col>
         </Row>
