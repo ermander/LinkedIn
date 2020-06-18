@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import HomeProfile from "./HomeProfile";
 import Modal from "./Modal";
-import NavBar from './NavBar'
+import NavBar from '../NavBar'
 import axios from "axios";
 import Feed from "./Feed";
 import NewsFeedRightSidebar from "./NewsFeedRightSidebar";
