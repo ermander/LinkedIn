@@ -42,7 +42,7 @@ class Feed extends Component {
 
   render() {
     return (
-      <Container fluid>
+      <Container id='feed' fluid>
         <Row>
           <hr></hr>
           {this.state.loading ? (

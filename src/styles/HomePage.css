@@ -144,6 +144,8 @@
     padding: 15px 0;
   }
   #postHeader > div:first-of-type{
+    padding: 5px;
+    font-size: 14px;
     display: flex;
   }
   #postHeader img{
@@ -156,7 +158,10 @@
     margin: 0;
     padding: 0 10px;
   }
-  #postBody img{
+  #postBody{
+    font-size: 13px;
+  }
+  #postBody img{ 
     height: 300px;
   }
 
@@ -211,4 +216,8 @@ textarea.form-control:visited{
 }
 .modal-header {
   padding: 0.5em;
+}
+#feed #loadingAnimation{
+  top: 10%;
+  left: 10%;
 }

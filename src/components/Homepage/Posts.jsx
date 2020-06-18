@@ -15,7 +15,8 @@ class Posts extends Component {
     show: false,
     image:"https://static.toiimg.com/thumb/msid-44945488,width-748,height-499,resizemode=4,imgsize-291921/Nice-in-pictures.jpg",
     file:null,
-    text : ''
+    text : '',
+    count : 0
   };
 
   async editPost(){
@@ -41,7 +42,10 @@ class Posts extends Component {
       let text = await axios(postText)
       let file = await axios(postFile)    
   }
-  
+  handleLikes = ()=>{
+      let prevCount = this.state.count
+      this.setState({count:prevCount+1})
+  }
   render() {
     return (
       <Container className="mt-2 home px-0">
@@ -54,10 +58,10 @@ class Posts extends Component {
                   {this.props.posts.user.name}
                 </Link>
               </p>
-              <p style={{ fontSize: "12px", color: "grey" }}>
+              <p style={{ fontSize: "10px", color: "grey" }}>
                 {this.props.posts.updatedAt.slice(0, 10)}
               </p>
-              <p style={{ fontSize: "12px", color: "grey" }}>
+              <p style={{ fontSize: "10px", color: "grey" }}>
                 {this.props.posts.user.bio}
               </p>
             </div>
@@ -87,7 +91,7 @@ class Posts extends Component {
                   </Modal.Header>
                   <Modal.Body>
                     <div className="d-flex mb-2">
-                      <img src={this.props.posts.user.image} alt="" />
+                      <img className='img-fluid' src={this.props.posts.user.image} alt="" />
                       <div>
                         <p className="m-0 p-0">
                           <Link to={"/profile/" + this.props.user.username}>
@@ -131,7 +135,7 @@ class Posts extends Component {
           </div>
         </div>
         <div id="postBody">
-          <p className="ml-1">{this.props.posts.text}</p>
+          <p className="px-3 py-1">{this.props.posts.text}</p>
           {this.props.posts.image === undefined ? null : (
             <img
               className="img-fluid w-100"
@@ -147,12 +151,12 @@ class Posts extends Component {
                 <AiTwotoneLike />
               </p>
             </IconContext.Provider>
-            <p style={{ padding: "2px 10px 0 5px" }}>21 .</p>
+            <p style={{ padding: "2px 10px 0 5px" }}>{this.state.count} .</p>
             <p style={{ padding: "2px 0" }}>1 Comment</p>
           </div>
           <hr style={{ padding: "0", margin: "0" }}></hr>
           <div>
-            <div style={{ display: "flex" }}>
+            <div onClick={this.handleLikes} style={{ display: "flex",cursor:'pointer' }}>
               <IconContext.Provider value={{}}>
                 <p>
                   <AiTwotoneLike />
