@@ -2,7 +2,7 @@
 .jumbotron{
     padding: 0 !important;
     background-color: white !important;
-    border: solid 2px #DADDDF;
+    border:solid 1px #8f9294;
     /* border-top: none; */
   }
   
@@ -99,7 +99,7 @@
     justify-content: space-between;
     margin: 18px 24px 0 24px;
     padding: 5px 14px;
-    border: solid 2px #DADDDF;
+    border:solid 1px #8f9294;
     background-color: #F3F6F8 !important;
   }
   #present p{
@@ -116,7 +116,7 @@
     display: flex;
     margin: 0 24px 20px 24px;
     padding: 5px 14px;
-    border: solid 2px #DADDDF;
+    border:solid 1px #8f9294;
     border-top: none;
   }
   #presentBelowSection p {
@@ -132,7 +132,7 @@
   #about{
     /* width: 100%; */
     margin: 20px 0;
-    border: solid 2px #DADDDF;
+    border:solid 1px #8f9294;
     padding: 10px 24px;
     display: flex;
     justify-content: space-between;
@@ -143,7 +143,7 @@
   #experiences{
     /* width: 100%; */
     margin: 20px 0;
-    border: solid 2px #DADDDF;
+    border:solid 1px #8f9294;
     padding: 10px 24px;
     /* display: flex; */
     /* justify-content: space-between; */

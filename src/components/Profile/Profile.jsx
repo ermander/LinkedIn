@@ -70,31 +70,12 @@ class Profile extends Component {
   render() {
     return (
       <>
-        <NavBar
-          onsearch={(e) => {
-            this.setState({searchKey:e.target.value.toLowerCase()})
-            console.log(e.target.value)
-            if(e.target.value.length >1) {
-              this.setState({show:true})
-            }else {this.setState({show:false})}}
-          }
-          show ={this.state.show}
-          users ={this.state.users.map((element,index) => {
-
-              if(element.name.toLowerCase().includes(this.state.searchKey)){
-              return (
-                <Dropdown.Item
-                key={index}
-                onSelect={() => this.props.history.push(`/profile/${element.username}`)}
-                eventKey={index}>{element.name}</Dropdown.Item>
-              )}
-          })}
-        />
+        <NavBar/>
         {this.state.loading ? 
         <div id='loadingAnimation'><img src="https://i.stack.imgur.com/h6viz.gif" alt=""/></div> : 
         <Container style={{ marginTop: "58px" }}>
           <Row>
-            <Col xs={8}>
+            <Col className="col-7 offset-1">
               <MainJumbotron username={this.props.match.params.id}/>
               <div id='experiences'>
                 <div id='header'>

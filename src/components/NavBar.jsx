@@ -20,7 +20,7 @@ import { IoMdNotificationsOutline } from "react-icons/io";
 import photo from "../images/photo.png";
 import { BsGrid3X3GapFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import usersData from "./HOC/FetchData";
+import usersData from "./HOC/FetchUsers";
 
 class NavBar extends Component {
   state = {
@@ -30,9 +30,7 @@ class NavBar extends Component {
   };
 
   componentDidMount() {
-    this.setState({ users: this.props.users }, () =>
-      console.log(this.state.users)
-    );
+    this.setState({ users: this.props.users });
   }
   render() {
     return (

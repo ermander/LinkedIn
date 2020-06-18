@@ -23,7 +23,7 @@ class SideBar extends React.Component {
     render() {
         console.log(this.state.data.slice(0,6))
         return(
-            <Col className='col-4 sideBar'>
+            <Col className='col-3 sideBar'>
                 <div className='mb-3'>
                     <div className='d-flex justify-content-start align-items-center'>
                         <span>Edit public profile & URL</span><FaQuestionCircle />
@@ -34,7 +34,7 @@ class SideBar extends React.Component {
                     </div>
                 </div>
                 <div className='banerContainer'>
-                    <Image src='https://via.placeholder.com/300' style={{width: 100 + "%", height: 300 + "px"}}/>
+                    <Image src='https://via.placeholder.com/300' style={{width: 100 + "%", height: 200 + "px"}}/>
                 </div>
                 <div className='mt-4'>
                     <h2>People Also Viewed</h2>
