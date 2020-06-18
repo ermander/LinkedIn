@@ -17,10 +17,24 @@ class Profile extends Component {
     experiences: [],
     show :false,
     searchKey:'',
-    loading : true
+    loading : true,
+    name :''
   };
-  componentDidMount() {
+  componentDidMount = async() => {
     this.fetchExperience();
+    let response = await fetch(
+      "https://striveschool.herokuapp.com/api/profile/me",
+      {
+        method: "GET",
+        headers: new Headers({
+          Authorization: "Basic " + btoa("user7:3UU5dYFvenRuRP7E"),
+          "Content-type": "application/json",
+        }),
+      }
+    )
+    let parsedJson = await response.json()
+      this.setState({name : parsedJson.username})
+      console.log(parsedJson)
   }
 
   componentDidUpdate = () => {
@@ -88,8 +102,12 @@ class Profile extends Component {
                   <Link to='/addExperience'><FaPlus/></Link>
                 </div>
                 {this.state.experiences.map((element) => {
+                  console.log(element)
                   return (
                     <Experiences
+                    user = {this.state.name}
+                    id={element._id}
+                    currentUser = {element.username}
                     image='https://www.careeraddict.com/uploads/article/55295/work-experience-note-pinboard.jpg'
                     role={element.role}
                     company={element.company}
