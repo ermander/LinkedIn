@@ -123,7 +123,7 @@ background-color: #283e4a;
 }
 #writePost{
  
-  min-height: 120px;
+  height: 100px;
   border: 2px solid #DADDDF;
   display: flex;
   justify-content: space-between;
@@ -147,11 +147,11 @@ background-color: #283e4a;
   font-size: 2rem !important;
 }
 #icons >div {
-  min-height: 120px !important;
+  min-height: 100px !important;
   border: 2px solid #DADDDF;
   padding-left: 30px;
   padding-right: 30px;
-  padding-top: 40px;
+  padding-top: 30px;
   border-top: none;
   border-bottom: none;
   border-right: none;
@@ -164,7 +164,7 @@ background-color: #283e4a;
   border-top: none;
   box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.75);
   font-size: 0.8em;
-  color :
+  /* /olor : */
 }
 #postHeader{
   display: flex;
@@ -198,4 +198,10 @@ background-color: #283e4a;
   margin: 0;
   padding-top: 2px;
   padding-left: 5px;
+}
+.leftSidebar .icons{
+  font-size: 1.1rem;
+  /* padding-top: 5px; */
+  color: #0073b1;
+  cursor: pointer;
 }

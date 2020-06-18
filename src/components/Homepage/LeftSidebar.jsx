@@ -4,12 +4,14 @@ import { Row, Col } from "react-bootstrap";
 import { FaHashtag } from "react-icons/fa";
 import { GrGroup } from "react-icons/gr";
 import { FaPlus } from "react-icons/fa";
+import {IconContext} from 'react-icons';
+import {AiOutlineDown} from 'react-icons/ai'
 import { Link } from "react-router-dom";
 import { GoTriangleLeft } from "react-icons/go";
 
 
 const Leftsidebar = () => (
-  <div className=" border mt-3 sticky-top">
+  <div className="leftSidebar  mt-3 sticky-top" style={{border:"solid 2px grey"}}>
     <div>
       <Row className="mr-auto d-flex flex-row ">
         <Col xs={9} className="pl-4 mt-2" style={{ textAlign: "left" }}>
@@ -28,7 +30,9 @@ const Leftsidebar = () => (
               border: "none",
             }}
           >
-            v
+            <IconContext.Provider value={{className:'icons'}}>
+              <AiOutlineDown/>
+            </IconContext.Provider>
           </p>
         </Col>
       </Row>
@@ -48,22 +52,24 @@ const Leftsidebar = () => (
     </div>
     <div className="">
       <Row className="mr-auto d-flex flex-row">
-        <Col xs={9} className="pl-4" style={{ textAlign: "left" }}>
+        <Col xs={9} className="pl-4 pt-2" style={{ textAlign: "left" }}>
           Groups
         </Col>{" "}
         <Col xs={3}>
           {" "}
           <p
-            className="pt-0"
+
+            className="pt-o d-flex"
             id="toggler1"
             style={{
-              marginBottom: "0.5rem",
               fontSize: "1.5rem",
               color: "black",
               border: "none",
             }}
           >
-            v
+            <IconContext.Provider value={{className:'icons'}}>
+              <p><AiOutlineDown/></p>
+            </IconContext.Provider>
           </p>
         </Col>
       </Row>

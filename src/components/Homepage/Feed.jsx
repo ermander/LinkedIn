@@ -24,8 +24,8 @@ export class Feed extends Component {
     }
     render() {
         return (
-            <Container fluid >
-                <div id='writePost'>
+            <Container fluid  >
+                <div id='writePost' >
                     <div onClick={this.props.postButton}>
                         <IconContext.Provider value={{className:'writePostIcons'}}>
                             <a><FiEdit/></a>
