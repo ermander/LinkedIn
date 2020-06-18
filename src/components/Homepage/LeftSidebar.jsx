@@ -15,10 +15,10 @@ const Leftsidebar = () => (
   <div className="leftSidebar  mt-3  home">
     <div>
       <Row className="mr-auto d-flex flex-row ">
-        <Col xs={9} className="pl-4 mt-2 left" >
+        <Col xs={10} className="pl-4 mt-2 left p4" >
           Recent
         </Col>{" "}
-        <Col xs={3}>
+        <Col xs={2}>
           {" "}
           <p
             id="toggler"
@@ -35,11 +35,11 @@ const Leftsidebar = () => (
         toggler="#toggler"
         className="al"
              >
-        <p  >
+        <p className='d-flex align-items-center p4'>
           <FaHashtag />
           REACT
         </p>
-        <p >
+        <p className='d-flex align-items-center p4'>
           <FaHashtag />
           JAVASCRIPT
         </p>
@@ -47,10 +47,10 @@ const Leftsidebar = () => (
     </div>
     <div className="">
       <Row className="mr-auto d-flex flex-row">
-        <Col xs={9} className="pl-4 pt-2 left" >
+        <Col xs={10} className="pl-4 pt-2 left p4" >
           Groups
         </Col>{" "}
-        <Col xs={3}>
+        <Col xs={2}>
           {" "}
           <div
             className="pt-o d-flex tog2"
@@ -65,18 +65,18 @@ const Leftsidebar = () => (
         toggler="#toggler1"
        className="al"
       >
-        <p style={{ fontSize: "15px" }}>
-          <GrGroup className="mr-2" />
+        <p className='d-flex align-items-center'>
+          <GrGroup className="mr-2 p4" />
           Join Groups
         </p>
       </UncontrolledCollapse>
     </div>
     <div className="">
       <Row className="mr-auto d-flex flex-row">
-        <Col xs={9} className="pl-4 left" >
+        <Col xs={10} className="pl-4 left p4" >
           Events
         </Col>{" "}
-        <Col xs={3}>
+        <Col xs={2}>
           <FaPlus />{" "}
         </Col>
       </Row>
@@ -90,8 +90,8 @@ const Leftsidebar = () => (
       </Link>
     </div>
     <div className="pt-2">
-      <Col className="pl-4 pb-2" style={{ textAlign: "center" }}>
-        Events
+      <Col className="pl-4 pb-2 p4" style={{ textAlign: "center" }}>
+        Discover more
       </Col>
     </div>
   </div>
