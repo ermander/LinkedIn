@@ -52,13 +52,13 @@ const Leftsidebar = () => (
         </Col>{" "}
         <Col xs={3}>
           {" "}
-          <p
+          <div
             className="pt-o d-flex tog2"
             id="toggler1">
             <IconContext.Provider value={{className:'icons'}}>
               <p><AiOutlineDown/></p>
             </IconContext.Provider>
-          </p>
+          </div>
         </Col>
       </Row>
       <UncontrolledCollapse

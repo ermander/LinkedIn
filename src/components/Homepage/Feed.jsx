@@ -83,7 +83,7 @@ export class Feed extends Component {
           </p>
         </div>
         <hr></hr>
-        {this.state.posts.map((element) => {
+        {this.state.posts.map((element , i) => {
           return (
             <Posts
               user={this.state.username.name}
@@ -92,6 +92,7 @@ export class Feed extends Component {
               image={element.image}
               bio={element.user.bio}
               text={element.text}
+              key={i}
             />
           );
         })}
