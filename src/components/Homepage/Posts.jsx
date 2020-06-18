@@ -30,7 +30,7 @@ export class Posts extends Component {
             {this.props.user === this.props.name ? (
               <>
                 <BsThreeDots
-                  show={false}
+                  show={"false"}
                   onClick={() => {
                     this.setState({ show: !this.state.show }, () =>
                       console.log(this.state.show)
