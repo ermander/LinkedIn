@@ -52,7 +52,7 @@ export class Feed extends Component {
   render() {
     return (
       <Container fluid>
-        <Row>
+        <Row className='feedShadow'>
           <Col id="writePost" className='px-0'>
               <div onClick={this.props.postButton} className='col col-6 w-100 d-flex align-items-center' style={{margin: '0px'}}>
                   <a>
@@ -80,24 +80,26 @@ export class Feed extends Component {
             <a href="">Write an article</a> on LinkedIn
           </p>
         </div>
-        <hr></hr>
-        {this.state.loading ? <div id='loadingAnimation'><img src="https://i.stack.imgur.com/h6viz.gif" alt=""/></div>
-         :
-        this.state.posts.map((element , i) => {
-            return (
-              <Posts
-                user={this.state.username.name}
-                name={element.user.name}
-                id={element._id}
-                image={element.image}
-                bio={element.user.bio}
-                text={element.text}
-                key={i}
-                date ={element.updatedAt.slice(0,10)}
-              />
-            );
-          })
-        }
+        </Row>
+        <Row>
+          <hr></hr>
+          {this.state.loading ? <div id='loadingAnimation'><img src="https://i.stack.imgur.com/h6viz.gif" alt=""/></div>
+           :
+          this.state.posts.map((element , i) => {
+              return (
+                <Posts
+                  user={this.state.username.name}
+                  name={element.user.name}
+                  id={element._id}
+                  image={element.image}
+                  bio={element.user.bio}
+                  text={element.text}
+                  key={i}
+                  date ={element.updatedAt.slice(0,10)}
+                />
+              );
+            })
+          }
         </Row>
       </Container>
     );
