@@ -9,22 +9,22 @@ class NewsFeedRightSidebar extends React.Component {
         return(
             <Container className="sticky-top">
                 <Row>
-                    <Col className='col-12' style={{border: '2px solid grey'}}>
+                    <Col className='col-12 home' >
                             <div className='d-flex justify-content-between align-items-center my-3'>
                                 <span style={{fontSize: '16px'}}> Add to your feedback </span> <GoInfo />
                             </div>
                             <Row>
                                 <Col className='d-flex mb-3 align-items-center'>
-                                    <Image src='https://capenetworks.com/static/images/testimonials/user-icon.svg' style={{width: 57.5 + "px", height: 57.5 + "px", borderRadius: 30 + 'px'}} alt="User's picture"/>
+                                    <Image src='https://capenetworks.com/static/images/testimonials/user-icon.svg' className="svg1"  alt="User's picture"/>
                                     <div className='ml-1'>
                                         <span>#JavaScript</span>
                                     </div>
-                                    <Button variant="outline" className='d-flex justify-content-center align-items-center' style={{height: 50 + '%', marginLeft: 'auto', fontSize: 14 + 'px', fontWeight: 700, padding: "6px 8px", borderRadius: '2px', borderColor: '#0073b1', color: '#0073b1'}}><GoPlus />Follow</Button>
+                                    <Button variant="outline" className='d-flex justify-content-center align-items-center'  style={{height: 50 + '%', marginLeft: 'auto', fontSize: 14 + 'px', fontWeight: 700, padding: "6px 8px", borderRadius: '2px', borderColor: '#0073b1', color: '#0073b1'}}><GoPlus />Follow</Button>
                                 </Col>
                             </Row>
                             <Row>
                                 <Col className='d-flex mb-3 align-items-center'>
-                                    <Image src='https://capenetworks.com/static/images/testimonials/user-icon.svg' style={{width: 57.5 + "px", height: 57.5 + "px", borderRadius: 30 + 'px'}} alt="User's picture"/>
+                                    <Image src='https://capenetworks.com/static/images/testimonials/user-icon.svg' className="svg1" alt="User's picture"/>
                                     <div className='ml-1'>
                                         <span>#programing</span>
                                     </div>
@@ -33,23 +33,23 @@ class NewsFeedRightSidebar extends React.Component {
                             </Row>
                             <Row>
                                 <Col className='d-flex mb-3 align-items-center'>
-                                    <Image src='https://capenetworks.com/static/images/testimonials/user-icon.svg' style={{width: 57.5 + "px", height: 57.5 + "px", borderRadius: 30 + 'px'}} alt="User's picture"/>
+                                    <Image src='https://capenetworks.com/static/images/testimonials/user-icon.svg' className="svg1" alt="User's picture"/>
                                     <div className='ml-1'>
                                         <span>Richard Branson</span>
                                     </div>
                                     <Button variant="outline" className='d-flex justify-content-center align-items-center' style={{height: 50 + '%', marginLeft: 'auto', fontSize: 14 + 'px', fontWeight: 700, padding: "6px 8px", borderRadius: '2px', borderColor: '#0073b1', color: '#0073b1'}}><GoPlus />Follow</Button>
                                 </Col>
                             </Row>
-                        <span style={{fontSize: '14px', color: "#0073b1"}}>View all recommendations</span>
+                        <span className="spa1" >View all recommendations</span>
                     </Col>
                     {/* //#DADDDF */}
-                    <Col className='col-12 mt-2 ' style={{padding: '0px', border: '2px solid grey'}}>
+                    <Col className='col-12 mt-2  home ' style={{padding: '0px'}}>
                         <div className='banerContainer'>
                             <Image src='https://via.placeholder.com/300' style={{width: 100 + "%"}}/>
                         </div>
                     </Col>
 
-                    <Col className='col-12 mt-2 mb-3 ' style={{border: '2px solid grey'}}>
+                    <Col className='col-12 mt-2 mb-3 home' >
                             <div className='d-flex justify-content-between align-items-center my-3'>
                                 <span style={{fontSize: '16px'}}> LinkedIn Learning </span> <GoInfo />
                             </div>
@@ -57,7 +57,7 @@ class NewsFeedRightSidebar extends React.Component {
                                 <Col className='d-flex mb-3 align-items-center'>
                                     <Image src='https://via.placeholder.com/100x56' style={{width: 35 + "%"}} alt="User's picture"/>
                                     <div className='ml-1'>
-                                        <span style={{fontSize: '14px', fontWeight: 700}}>Video title</span>
+                                        <span className="spa3" >Video title</span>
                                     </div>
                                 </Col>
                             </Row>
@@ -84,7 +84,7 @@ class NewsFeedRightSidebar extends React.Component {
                     </Col>
                     <Col className='d-flex justify-content-center  align-items-center'>
                         <Image src="https://logos-world.net/wp-content/uploads/2020/04/Linkedin-Logo-2003%E2%80%932011.png" style={{width: 25 + "%"}} />
-                        <span style={{fontSize: 12 + 'px', paddingLeft: '2px'}}> LinkedIn Corporation © 2020</span>
+                        <span className="spa4" > LinkedIn Corporation © 2020</span>
                     </Col>
                 
                 </Row>

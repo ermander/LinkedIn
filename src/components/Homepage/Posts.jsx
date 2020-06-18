@@ -5,6 +5,7 @@ import {AiTwotoneLike} from 'react-icons/ai'
 import {IconContext} from 'react-icons'
 import {MdComment} from 'react-icons/md'
 import {FaShare} from 'react-icons/fa'
+import './style/style.css'
 
 export class Posts extends Component {
     constructor(props){
@@ -12,13 +13,13 @@ export class Posts extends Component {
     }
     render() {
         return (
-            <Container fluid style={{border : '2px solid grey',minHeight:'600px'}} className='mt-3' >
+            <Container fluid style={{minHeight:'600px'}} className='mt-3 home' >
             <div id='postHeader'>
                 <div>
                     <img src="" alt=""/>
                     <div>
                         <p>{this.props.name}</p>
-                        <p style={{fontSize:'12px',color:'grey'}}>{this.props.bio}</p>
+                        <p className="titl1" >{this.props.bio}</p>
                     </div>
                 </div>
                 <div>
@@ -30,7 +31,7 @@ export class Posts extends Component {
                 <img className='img-fluid' src="https://images.unsplash.com/photo-1546507257-0bddab98fe3c?ixlib=rb-1.2.1&w=1000&q=80" alt=""/>
             </div>
             <div id='postFooter'>
-                <div style={{display:'flex',padding:'10px',fontSize:'12px'}}>
+                <div className="in" >
                     <IconContext.Provider value={{padding:'10px',color:'#007EC2'}}>
                     <p><AiTwotoneLike/></p>
                     </IconContext.Provider>
@@ -39,19 +40,19 @@ export class Posts extends Component {
                 </div>
                 <hr style={{padding:'0',margin:'0'}}></hr>
                 <div >
-                    <div style={{display:'flex'}}>
+                    <div className="like">
                         <IconContext.Provider value={{}}>
                             <p><AiTwotoneLike/></p>
                         </IconContext.Provider>
                         <p>Like</p>
                     </div>
-                    <div style={{display:'flex'}}>
+                    <div  className="like">
                         <IconContext.Provider value={{}}>
                             <p><MdComment/></p>
                         </IconContext.Provider>
                         <p>Comment</p>
                     </div>
-                    <div style={{display:'flex'}}>
+                    <div  className="like">
                         <IconContext.Provider value={{}}>
                             <p><FaShare/></p>
                         </IconContext.Provider>

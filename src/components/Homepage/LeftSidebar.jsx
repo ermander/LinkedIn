@@ -8,28 +8,23 @@ import {IconContext} from 'react-icons';
 import {AiOutlineDown} from 'react-icons/ai'
 import { Link } from "react-router-dom";
 import { GoTriangleLeft } from "react-icons/go";
+import "./style/style.css"
 
 
 const Leftsidebar = () => (
-  <div className="leftSidebar  mt-3 sticky-top" style={{border:"solid 2px grey"}}>
+  <div className="leftSidebar  mt-3 sticky-top home">
     <div>
       <Row className="mr-auto d-flex flex-row ">
-        <Col xs={9} className="pl-4 mt-2" style={{ textAlign: "left" }}>
+        <Col xs={9} className="pl-4 mt-2 left" >
           Recent
         </Col>{" "}
         <Col xs={3}>
           {" "}
           <p
             id="toggler"
-            className="mt-0"
+            className="mt-0 tog1"
             text="hello"
-            style={{
-              marginTop: "0.5rem",
-              fontSize: "1.5rem",
-              color: "black",
-              border: "none",
-            }}
-          >
+            >
             <IconContext.Provider value={{className:'icons'}}>
               <AiOutlineDown/>
             </IconContext.Provider>
@@ -38,13 +33,13 @@ const Leftsidebar = () => (
       </Row>
       <UncontrolledCollapse
         toggler="#toggler"
-        style={{ marginLeft: "5px", textAlign: "left" }}
-      >
-        <p style={{ fontSize: "12px" }}>
+        className="al"
+             >
+        <p  >
           <FaHashtag />
           REACT
         </p>
-        <p style={{ fontSize: "12px" }}>
+        <p >
           <FaHashtag />
           JAVASCRIPT
         </p>
@@ -52,21 +47,14 @@ const Leftsidebar = () => (
     </div>
     <div className="">
       <Row className="mr-auto d-flex flex-row">
-        <Col xs={9} className="pl-4 pt-2" style={{ textAlign: "left" }}>
+        <Col xs={9} className="pl-4 pt-2 left" >
           Groups
         </Col>{" "}
         <Col xs={3}>
           {" "}
           <p
-
-            className="pt-o d-flex"
-            id="toggler1"
-            style={{
-              fontSize: "1.5rem",
-              color: "black",
-              border: "none",
-            }}
-          >
+            className="pt-o d-flex tog2"
+            id="toggler1">
             <IconContext.Provider value={{className:'icons'}}>
               <p><AiOutlineDown/></p>
             </IconContext.Provider>
@@ -75,7 +63,7 @@ const Leftsidebar = () => (
       </Row>
       <UncontrolledCollapse
         toggler="#toggler1"
-        style={{ marginLeft: "5px", textAlign: "left" }}
+       className="al"
       >
         <p style={{ fontSize: "15px" }}>
           <GrGroup className="mr-2" />
@@ -85,7 +73,7 @@ const Leftsidebar = () => (
     </div>
     <div className="">
       <Row className="mr-auto d-flex flex-row">
-        <Col xs={9} className="pl-4" style={{ textAlign: "left" }}>
+        <Col xs={9} className="pl-4 left" >
           Events
         </Col>{" "}
         <Col xs={3}>
@@ -93,13 +81,10 @@ const Leftsidebar = () => (
         </Col>
       </Row>
     </div>
-
     <div>
       <Link to="/">
         <div
-          className="pl-2 pt-2 border-bottom"
-          style={{ textAlign: "left", fontSize: "13px" }}
-        >
+          className="pl-2 pt-2 border-bottom lin">
           Followed Hashtags
         </div>
       </Link>
