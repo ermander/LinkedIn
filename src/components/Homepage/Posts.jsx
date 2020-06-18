@@ -22,7 +22,9 @@ export class Posts extends Component {
                     </div>
                 </div>
                 <div>
-                    <BsThreeDots show={false} onClick={this.props.userName}/>
+                    {(this.props.user === this.props.name) ? 
+                <BsThreeDots show={false} onClick={this.props.userName}/> : null    
+                }
                 </div>
             </div>
             <div id='postBody'>

@@ -5,7 +5,7 @@ import {GrCamera} from 'react-icons/gr'
 import {IconContext} from 'react-icons'
 import {AiOutlineFileText} from 'react-icons/ai'
 import Posts from './Posts'
-import UploadPic from '../UploadPic'
+// import UploadPic from '../UploadPic'
 
 export class Feed extends Component {
     state ={
@@ -16,14 +16,14 @@ export class Feed extends Component {
         let response = await fetch('https://striveschool.herokuapp.com/api/posts/',{
             method :'GET',
             headers : new Headers({
-                'Authorization': 'Basic dXNlcjE4OlEyejVWN2hFRlU2SktSckU=',
+                'Authorization': "Basic " + btoa("user7:3UU5dYFvenRuRP7E"),
                 'Content-type': "application/json"
               })
         })
         let user = await fetch('https://striveschool.herokuapp.com/api/profile/me',{
             method :'GET',
             headers : new Headers({
-                'Authorization': 'Basic dXNlcjE4OlEyejVWN2hFRlU2SktSckU=',
+               'Authorization': "Basic " + btoa("user7:3UU5dYFvenRuRP7E"),
                 'Content-type': "application/json"
               })
         })
@@ -67,7 +67,7 @@ export class Feed extends Component {
                 <hr></hr>
                 {this.state.posts.map(element =>{
                     return(
-                        <Posts name={element.user.name} bio={element.user.bio} text={element.text}/>
+                        <Posts user={this.state.username.name} name={element.user.name} bio={element.user.bio} text={element.text}/>
                     )
                 })}
             </Container>
