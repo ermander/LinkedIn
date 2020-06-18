@@ -5,7 +5,7 @@ import { FaHashtag } from "react-icons/fa";
 import { GrGroup } from "react-icons/gr";
 import { FaPlus } from "react-icons/fa";
 import {IconContext} from 'react-icons';
-import {AiOutlineDown} from 'react-icons/ai'
+import {BsChevronCompactDown} from 'react-icons/bs'
 import { Link } from "react-router-dom";
 import { GoTriangleLeft } from "react-icons/go";
 import '../../styles/HomePage.css'
@@ -26,7 +26,7 @@ const Leftsidebar = () => (
             text="hello"
             >
             <IconContext.Provider value={{className:'icons'}}>
-              <AiOutlineDown/>
+              <BsChevronCompactDown />
             </IconContext.Provider>
           </p>
         </Col>
@@ -56,7 +56,7 @@ const Leftsidebar = () => (
             className="pt-o d-flex tog2"
             id="toggler1">
             <IconContext.Provider value={{className:'icons'}}>
-              <p><AiOutlineDown/></p>
+              <p><BsChevronCompactDown /></p>
             </IconContext.Provider>
           </div>
         </Col>
