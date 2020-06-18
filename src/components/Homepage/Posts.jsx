@@ -6,6 +6,7 @@ import { IconContext } from "react-icons";
 import { MdComment } from "react-icons/md";
 import { FaShare } from "react-icons/fa";
 import '../../styles/HomePage.css'
+import {Link} from 'react-router-dom'
 export class Posts extends Component {
   state = { show: false,image: 'https://static.toiimg.com/thumb/msid-44945488,width-748,height-499,resizemode=4,imgsize-291921/Nice-in-pictures.jpg', };
   
@@ -20,7 +21,8 @@ export class Posts extends Component {
           <div>
             <img src="" alt="" />
             <div>
-              <p>{this.props.name}</p>
+              <p><Link to={'/profile/'+this.props.username}>{this.props.name}</Link></p>
+              <p style={{ fontSize: "12px", color: "grey" }}>{this.props.date}</p>
               <p style={{ fontSize: "12px", color: "grey" }}>
                 {this.props.bio}
               </p>

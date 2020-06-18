@@ -89,10 +89,12 @@ export class Feed extends Component {
             <Posts
               user={this.state.username.name}
               name={element.user.name}
+              username={element.user.username}
               id={element._id}
               image={element.image}
               bio={element.user.bio}
               text={element.text}
+              date={element.updatedAt.slice(0,10)}
               key={i}
             />
           );
