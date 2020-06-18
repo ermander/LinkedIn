@@ -14,8 +14,8 @@ export class Posts extends Component {
     return (
       <Container
         fluid
-        style={{ border: "2px solid grey", minHeight: "600px" }}
-        className="mt-3"
+        style={{ minHeight: "600px" }}
+        className="mt-3 home"
       >
         <div id="postHeader">
           <div>

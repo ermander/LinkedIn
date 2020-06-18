@@ -7,7 +7,7 @@ import '../../styles/HomePage.css'
 class NewsFeedRightSidebar extends React.Component {
     render(){
         return(
-            <Container className="sticky-top">
+            <Container>
                 <Row>
                     <Col className='col-12 home' >
                             <div className='d-flex justify-content-between align-items-center my-3'>
