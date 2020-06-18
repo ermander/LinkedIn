@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Modal, Button, Container,Row,Col,Form } from "react-bootstrap";
-
+import './style/style.css'
 export default class postModal extends Component {
   render() {
     return (
@@ -18,8 +18,8 @@ export default class postModal extends Component {
               <Row>
                 <Col className="d-flex">
                   <img
-                    style={{ maxHeight: "40px",maxWidth:'40px' }}
-                    className="img-fluid"
+                   
+                    className="img-fluid mod"
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png"
                     alt=""
                   />

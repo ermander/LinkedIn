@@ -1,0 +1,93 @@
+.home{
+    border:solid 2px grey;
+}
+.back{
+    height: 3em;
+    background:linear-gradient(to bottom,rgba(0,0,0,.75),rgba(0,0,0,0));
+}
+.first{
+    position: absolute;
+    max-width:3em;
+    left: 39%;
+    top: 1.5em;
+}
+.p1{
+    font-size: 0.9em;
+    margin-top: 2em;
+    margin-bottom: 0;
+}
+.a1{
+  font-size: 0.6em;
+  color:blue;  
+}
+.p2{
+    font-size:0.6em;
+     margin: 0;
+     opacity:0.7;
+}
+.p3{
+    font-size: 0.6em;
+     margin: 0;
+}
+.left{
+    text-align: left;
+    outline: none;
+}
+.tog1{
+    margin-top: 0.5rem;
+    font-size: 1.5rem;
+    color: black;
+    border: none;
+}
+.al{
+    margin-left: 5px;
+     text-align: left;
+}
+.al p{
+ font-size: 12px; 
+}
+.tog2{
+    font-size: 1.5rem;
+    color: black;
+    border: none;
+}
+.lin{
+ text-align: left;
+  font-size: 13px; 
+}
+.mod{
+    max-height: 40px;
+    max-width:40px; 
+}
+.svg1{
+    width: 57.5px;
+     height: 57.5px;
+     border-radius: 30px;
+}
+.spa1{
+    font-size: 14px;
+     color: #0073b1;
+    }
+.spa3{
+  font-size: 14px;
+  font-weight: 700;
+}
+.spa4{
+    font-size: 12px;
+    padding-left: 2px;
+}
+.titl1{
+ font-size:12px;
+ color:grey;
+}
+.in{
+ display:flex;
+ padding:10px;
+ font-size:12px;   
+}
+.like{
+  display:flex; 
+}
+
+
+
