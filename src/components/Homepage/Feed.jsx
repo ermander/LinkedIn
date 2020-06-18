@@ -36,7 +36,7 @@ export class Feed extends Component {
     );
     let userName = await user.json();
     let posts = await response.json();
-    this.setState({ posts, username: userName }, () =>
+    this.setState({ posts:posts.reverse(), username: userName }, () =>
       console.log(this.state.username)
     );
     console.log(this.state.posts);

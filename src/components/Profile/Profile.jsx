@@ -108,7 +108,7 @@ class Profile extends Component {
                     user = {this.state.name}
                     id={element._id}
                     currentUser = {element.username}
-                    image='https://www.careeraddict.com/uploads/article/55295/work-experience-note-pinboard.jpg'
+                    image={element.image} 
                     role={element.role}
                     company={element.company}
                     startDate={element.startDate.slice(0,10)}
