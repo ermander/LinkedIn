@@ -6,7 +6,7 @@ import {
   Form,
   Container,
   Row,
-  Dropdown
+  Dropdown,
 } from "react-bootstrap";
 import { GrLinkedin } from "react-icons/gr";
 import {
@@ -19,8 +19,19 @@ import { MdMessage } from "react-icons/md";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import photo from "../images/photo.png";
 import { BsGrid3X3GapFill } from "react-icons/bs";
-import {Link} from 'react-router-dom'
-export default class NavBar extends Component {
+import { Link } from "react-router-dom";
+import usersData from './HOC/FetchData'
+class NavBar extends Component {
+  state = {
+    search:'',
+    users : [],
+    show: false,
+  };
+
+  
+  componentDidMount(){
+    this.setState({users:this.props.users},()=>console.log(this.state.users))
+  }
   render() {
     return (
       <Navbar
@@ -30,66 +41,92 @@ export default class NavBar extends Component {
       >
         <Container>
           <Navbar.Brand>
-            <Link to='/feed/me'>
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Linkedin_icon.svg/1200px-Linkedin_icon.svg.png"
-              className="linked"
-            />
+            <Link to="/feed/me">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Linkedin_icon.svg/1200px-Linkedin_icon.svg.png"
+                className="linked"
+              />
             </Link>
           </Navbar.Brand>
           <Form>
             <Dropdown>
-            <FormControl
-              type="text"
-              placeholder="Search"
-              className="mr-sm-2"
-              style={{ width: "250px", height: "33px" }}
-              onChange={this.props.onsearch}
-            />
-            <Dropdown.Menu show={this.props.show}>
-             {this.props.users}
-            </Dropdown.Menu>
+              <FormControl
+                type="text"
+                placeholder="Search"
+                className="mr-sm-2"
+                style={{ width: "250px", height: "33px" }}
+                onChange={(e) => {
+                  this.setState({ search : e.target.value},()=>console.log(this.state.search))
+                  if (e.target.value.length > 1) {
+                    this.setState({ show: true });
+                  } else {
+                    this.setState({ show: false });
+                  }
+                }}
+              />
+              <Dropdown.Menu show={this.state.show}>
+                {this.state.show ? 
+                this.props.users.map((element) => {
+                  if (element.name.toLowerCase().includes(this.state.search)) {
+                    return (
+                      <Dropdown.Item
+                        onSelect={() =>
+                          this.props.history.push(
+                            `/profile/${element.username}`
+                          )
+                        }
+                      >
+                        {element.name}
+                      </Dropdown.Item>
+                    );
+                  }
+                })
+                : <p>notfound</p>}
+              </Dropdown.Menu>
             </Dropdown>
           </Form>
           <Nav className="ml-auto  ">
-          <Link className="nav-link navIcon" to='/feed/me'>
+            <Link className="nav-link navIcon" to="/feed/me">
               <AiOutlineHome style={{ fontSize: "20px" }} />
               <div style={{ fontSize: "13px" }}>Home</div>
-
             </Link>
-            <Link className='navIcon nav-link' to='/myNetwork'> <AiOutlineTeam style={{fontSize:"20px"}}/><div style={{fontSize:"13px"}}>My Network</div></Link>
-            <Nav.Link className="navIcon" >
+            <Link className="navIcon nav-link" to="/myNetwork">
+              {" "}
+              <AiOutlineTeam style={{ fontSize: "20px" }} />
+              <div style={{ fontSize: "13px" }}>My Network</div>
+            </Link>
+            <Nav.Link className="navIcon">
               <RiBriefcaseLine style={{ fontSize: "20px" }} />
               <div style={{ fontSize: "13px" }}> Jobs</div>
             </Nav.Link>
-            <Nav.Link className="navIcon" >
+            <Nav.Link className="navIcon">
               <MdMessage style={{ fontSize: "20px" }} />
               <div style={{ fontSize: "13px" }}> Messaging</div>
             </Nav.Link>
-            <Nav.Link className="navIcon" >
+            <Nav.Link className="navIcon">
               <IoMdNotificationsOutline style={{ fontSize: "20px" }} />
               <div style={{ fontSize: "13px" }}> Notifications</div>
             </Nav.Link>
-            <Nav.Link className="navIcon" >
-              <Link className='nav-link' to="/">
-              <img
-                src={photo}
-                style={{ borderRadius: "50%", height: "20px", width: "20px" }}
-              ></img>
-              <div style={{ fontSize: "13px" }}>
-                Me{" "}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 16 16"
-                  data-supported-dps="16x16"
-                  fill="currentColor"
-                  width="16"
-                  height="16"
-                  focusable="false"
-                >
-                  <path d="M8.8 10.66L14 5.12a.07.07 0 00-.07-.12H2.07a.07.07 0 00-.07.12l5.2 5.54a1.1 1.1 0 001.6 0z"></path>
-                </svg>
-              </div>
+            <Nav.Link className="navIcon">
+              <Link className="nav-link" to="/profile/me">
+                <img
+                  src={photo}
+                  style={{ borderRadius: "50%", height: "20px", width: "20px" }}
+                ></img>
+                <div style={{ fontSize: "13px" }}>
+                  Me{" "}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 16 16"
+                    data-supported-dps="16x16"
+                    fill="currentColor"
+                    width="16"
+                    height="16"
+                    focusable="false"
+                  >
+                    <path d="M8.8 10.66L14 5.12a.07.07 0 00-.07-.12H2.07a.07.07 0 00-.07.12l5.2 5.54a1.1 1.1 0 001.6 0z"></path>
+                  </svg>
+                </div>
               </Link>
             </Nav.Link>
             <Nav.Link
@@ -123,3 +160,5 @@ export default class NavBar extends Component {
     );
   }
 }
+
+export default usersData(NavBar);

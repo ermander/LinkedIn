@@ -1,14 +1,13 @@
 import React, { Component } from "react";
-import Footer from "./Footer";
+import Footer from "../Footer";
 import MainJumbotron from "./MainJumbotron";
 import SideBar from "./SideBar";
 import { Container, Row, Col,Dropdown } from "react-bootstrap";
-import NavBar from "./NavBar";
+import NavBar from "../NavBar";
 import Experiences from "./Experiences";
 import axios from "axios";
 import {Link} from 'react-router-dom';
 import {FaPlus} from 'react-icons/fa';
-import NewsFeedRightSidebar from './NewsFeedRightSidebar';
 
 class Profile extends Component {
   state = {
@@ -103,7 +102,7 @@ class Profile extends Component {
           </Row>
           <Footer />
         </Container>
-  }
+  } 
       </>
     );
   }

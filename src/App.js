@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Profile from './components/Profile'
+import Profile from './components/Profile/Profile'
 import Signin from './components/SignIn'
 import {BrowserRouter as Router,Switch,Route} from 'react-router-dom'
-import MyNetwork from './components/MyNetwork'; 
-import ExperienceSubmitionForm from './components/ExperienceSubmitionForm'
-import Homepage from './components/Homepage'
+import MyNetwork from './components/Network/MyNetwork'; 
+import ExperienceSubmitionForm from './components/Network/ExperienceSubmitionForm'
+import Homepage from './components/Homepage/FeedPage'
 
 
 function App() {
