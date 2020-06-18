@@ -8,7 +8,7 @@ import {IconContext} from 'react-icons';
 import {AiOutlineDown} from 'react-icons/ai'
 import { Link } from "react-router-dom";
 import { GoTriangleLeft } from "react-icons/go";
-import "./style/style.css"
+import '../../styles/HomePage.css'
 
 
 const Leftsidebar = () => (

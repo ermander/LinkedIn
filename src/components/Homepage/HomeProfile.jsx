@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import './style/style.css'
+import '../../styles/HomePage.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 

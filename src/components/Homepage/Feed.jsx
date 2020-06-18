@@ -5,6 +5,7 @@ import { GrCamera } from "react-icons/gr";
 import { IconContext } from "react-icons";
 import { AiOutlineFileText } from "react-icons/ai";
 import Posts from "./Posts";
+import '../../styles/HomePage.css'
 // import UploadPic from '../UploadPic'
 
 export class Feed extends Component {

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Modal, Button, Container, Row, Col, Form } from "react-bootstrap";
-import "./style/style.css";
+import '../../styles/HomePage.css'
 export default class postModal extends Component {
   render() {
     return (

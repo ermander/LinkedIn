@@ -7,7 +7,7 @@ import axios from "axios";
 import Feed from "./Feed";
 import NewsFeedRightSidebar from "./NewsFeedRightSidebar";
 import Leftsidebar from "./LeftSidebar";
-
+import '../../styles/HomePage.css'
 export default class Homepage extends Component {
   state = {
     showModal: false,
