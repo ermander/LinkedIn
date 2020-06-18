@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Modal, Button,Form } from "react-bootstrap";
+import { Container, Modal, Button,Form,Dropdown } from "react-bootstrap";
 import { BsThreeDots } from "react-icons/bs";
 import { AiTwotoneLike } from "react-icons/ai";
 import { IconContext } from "react-icons";
@@ -31,14 +31,19 @@ export class Posts extends Component {
           <div>
             {this.props.user === this.props.name ? (
               <>
-                <BsThreeDots
-                  show={"false"}
-                  onClick={() => {
-                    this.setState({ show: !this.state.show }, () =>
-                      console.log(this.state.show)
+                <Dropdown>
+                    <Dropdown.Toggle>
+                    <BsThreeDots/>
+                    </Dropdown.Toggle>
+
+                    <Dropdown.Menu>
+                        <Dropdown.Item onClick={() => {
+                    this.setState({ show: !this.state.show },
                     );
                   }}
-                />
+                  >Edit Post</Dropdown.Item>
+                    </Dropdown.Menu>
+                </Dropdown>
                 <Modal
                   show={this.state.show}
                   onHide={() => this.setState({ show: false })}

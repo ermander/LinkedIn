@@ -180,4 +180,15 @@
     color: #0073b1;
     cursor: pointer;
   }
+.dropdown-toggle::after {
+  /* content: '' !important; */
+  border: none !important;
 
+}
+#postHeader .btn-primary {
+  color: black !important;
+  background-color: transparent !important;
+  border: none !important;
+  outline: none !important;
+  padding: 0 !important;
+}
