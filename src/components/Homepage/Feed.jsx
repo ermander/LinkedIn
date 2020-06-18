@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Modal, Button } from "react-bootstrap";
+import { Container, Row, Col, Modal, Button } from "react-bootstrap";
 import { FiEdit, FiVideo } from "react-icons/fi";
 import { GrCamera } from "react-icons/gr";
 import { IconContext } from "react-icons";
@@ -52,33 +52,29 @@ export class Feed extends Component {
   render() {
     return (
       <Container fluid>
-        <div id="writePost">
-          <div onClick={this.props.postButton}>
-            <IconContext.Provider value={{ className: "writePostIcons" }}>
-              <a>
-                <FiEdit />
-              </a>
-            </IconContext.Provider>
-            <a style={{ fontSize: "20px", paddingTop: "20px" }}>Start a Post</a>
-          </div>
-          <div id="icons">
-            <IconContext.Provider value={{ className: "writePostIcons" }}>
-              <div>
-                <GrCamera />
+        <Row>
+          <Col id="writePost" className='px-0'>
+              <div onClick={this.props.postButton} className='col col-6 w-100 d-flex align-items-center' style={{margin: '0px'}}>
+                  <a>
+                    <FiEdit style={{fontSize: '2rem'}}/>
+                  </a>
+                <a style={{ fontSize: "20px"}}>Start a Post</a>
               </div>
-            </IconContext.Provider>
-            <IconContext.Provider value={{ className: "writePostIcons" }}>
-              <div>
-                <FiVideo />
-              </div>
-            </IconContext.Provider>
-            <IconContext.Provider value={{ className: "writePostIcons" }}>
-              <div>
-                <AiOutlineFileText />
-              </div>
-            </IconContext.Provider>
-          </div>
-        </div>
+            <div id="icons" className='col col-6 px-0'>
+
+                <div className='col col-4 d-flex justify-content-center align-items-center'>
+                  <GrCamera style={{fontSize: '2rem'}}/>
+                </div>
+
+                <div className='col col-4 d-flex justify-content-center align-items-center'>
+                  <FiVideo style={{fontSize: '2rem'}}/>
+                </div>
+
+                <div className='col col-4 d-flex justify-content-center align-items-center'>
+                  <AiOutlineFileText style={{fontSize: '2rem'}}/>
+                </div>
+            </div>
+          </Col>
         <div id="writePostFooter">
           <p>
             <a href="">Write an article</a> on LinkedIn
@@ -102,6 +98,7 @@ export class Feed extends Component {
             );
           })
         }
+        </Row>
       </Container>
     );
   }
