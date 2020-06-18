@@ -7,7 +7,7 @@ import { MdComment } from "react-icons/md";
 import { FaShare } from "react-icons/fa";
 import './style/style.css'
 export class Posts extends Component {
-  state = { show: false,image:null, };
+  state = { show: false,image: 'https://static.toiimg.com/thumb/msid-44945488,width-748,height-499,resizemode=4,imgsize-291921/Nice-in-pictures.jpg', };
   
   render() {
     return (
@@ -88,7 +88,7 @@ export class Posts extends Component {
           </p>
           <img
             className="img-fluid"
-            src={this.props.image}
+            src={this.props.image==='none' || !this.props.image ? this.state.image : this.props.image}
             alt=""
           />
         </div>
