@@ -97,8 +97,13 @@
   }
   #writePost #icons{
     display: flex;
-    margin: auto 0px;
+    margin: 0px;
   }
+
+  #icons > div {
+    border-left: 2px solid #DADDDF;
+  }
+
   #writePost > div:first-of-type {
     margin: auto 20px;
   }
@@ -110,19 +115,7 @@
   #writePost > div:first-of-type > a{
     padding: 0 10px;
   }
-  .writePostIcons{
-    font-size: 2rem !important;
-  }
-  #icons >div {
-    min-height: 100px !important;
-    border: 2px solid #DADDDF;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-top: 30px;
-    border-top: none;
-    border-bottom: none;
-    border-right: none;
-  }
+
   #writePostFooter{
     padding: 10px;
     width: 100%;
