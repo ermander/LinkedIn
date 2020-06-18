@@ -1,35 +1,69 @@
 import React, { Component } from "react";
-import { Container, Modal, Button,Form } from "react-bootstrap";
+import { Container, Modal, Button, Form } from "react-bootstrap";
 import { BsThreeDots } from "react-icons/bs";
 import { AiTwotoneLike } from "react-icons/ai";
 import { IconContext } from "react-icons";
 import { MdComment } from "react-icons/md";
 import { FaShare } from "react-icons/fa";
-import '../../styles/HomePage.css'
-import {Link} from 'react-router-dom'
-export class Posts extends Component {
-  state = { show: false,image: 'https://static.toiimg.com/thumb/msid-44945488,width-748,height-499,resizemode=4,imgsize-291921/Nice-in-pictures.jpg', };
+import "../../styles/HomePage.css";
+import { Link } from "react-router-dom";
+import FetchPosts from "../HOC/FetchPosts";
+import axios from 'axios'
+
+class Posts extends Component {
+  state = {
+    show: false,
+    image:"https://static.toiimg.com/thumb/msid-44945488,width-748,height-499,resizemode=4,imgsize-291921/Nice-in-pictures.jpg",
+    file:null,
+    text : ''
+  };
+
+  async editPost(){
+      const postText = {
+        method: "PUT",
+        url:`https://striveschool.herokuapp.com/api/posts/${this.props.posts._id}`,
+        headers: {
+          Authorization:
+            "Basic " + btoa("user7:3UU5dYFvenRuRP7E"),
+        },
+        data: {text:this.state.text},
+      }        
+      
+      const postFile = {
+        method: "POST",
+        url:`https://striveschool.herokuapp.com/api/posts/${this.props.posts._id}`,
+        headers: {
+          Authorization:
+            "Basic " + btoa("user7:3UU5dYFvenRuRP7E"),
+        },
+        data: this.state.file,
+      }
+      let text = await axios(postText)
+      let file = await axios(postFile)    
+  }
   
   render() {
     return (
-      <Container
-        fluid
-        style={{ minHeight: "600px" }}
-        className="mt-3 home"
-      >
-        <div id="postHeader">
+      <Container className="mt-2 home px-0">
+        <div className="p-1" id="postHeader">
           <div>
-            <img src="" alt="" />
+            <img src={this.props.posts.user.image} alt="" />
             <div>
-              <p><Link to={'/profile/'+this.props.username}>{this.props.name}</Link></p>
-              <p style={{ fontSize: "12px", color: "grey" }}>{this.props.date}</p>
+              <p>
+                <Link to={"/profile/" + this.props.user.username}>
+                  {this.props.posts.user.name}
+                </Link>
+              </p>
               <p style={{ fontSize: "12px", color: "grey" }}>
-                {this.props.bio}
+                {this.props.posts.updatedAt.slice(0, 10)}
+              </p>
+              <p style={{ fontSize: "12px", color: "grey" }}>
+                {this.props.posts.user.bio}
               </p>
             </div>
           </div>
           <div>
-            {this.props.user === this.props.name ? (
+            {this.props.user.name === this.props.posts.user.name ? (
               <>
                 <BsThreeDots
                   show={"false"}
@@ -43,30 +77,37 @@ export class Posts extends Component {
                   show={this.state.show}
                   onHide={() => this.setState({ show: false })}
                 >
-                  <Modal.Header closeButton>
-                    <Modal.Title>Modal heading</Modal.Title>
+                  <Modal.Header closeButton >
+                    <Modal.Title>Edit Post</Modal.Title>
                   </Modal.Header>
                   <Modal.Body>
+                    <div className="d-flex mb-2">
+                      <img src={this.props.posts.user.image} alt="" />
+                      <div>
+                        <p className="m-0 p-0">
+                          <Link to={"/profile/" + this.props.user.username}>
+                            {this.props.posts.user.name}
+                          </Link>
+                        </p>
+                        <p className="m-0 p-0" style={{ fontSize: "12px", color: "grey" }}>
+                          {this.props.posts.updatedAt.slice(0, 10)}
+                        </p>
+                      </div>
+                    </div>
                     <Form>
                       <Form.Group>
+                        <Form.Control
+                          as="textarea"
+                          rows="4"
+                          onChange ={(e)=>this.setState({text:e.target.value})}
+                          placeHolder={this.props.posts.text}
+                        />
                         <Form.File
-                          label="Example file input"
-                          onChange={
-                            (event) => {
-                                console.log(event.target.files[0]);
-                                const formData = new FormData();
-                                formData.append("post", event.target.files[0]);
-                                console.log(formData);
-                                fetch( `https://striveschool.herokuapp.com/api/posts/${this.props.id}`,
-                                  {
-                                    method: "POST",
-                                    body: formData,
-                                    headers: {
-                                    Authorization: "Basic " + btoa("user7:3UU5dYFvenRuRP7E")}
-                                  }
-                                    ).then(element=> console.log(element.json()))
-                              }}
-                          
+                          onChange={(event)=>{
+                            const formData = new FormData();
+                            formData.append("post", event.target.files[0])
+                            this.setState({file:formData})
+                          }}
                         />
                       </Form.Group>
                     </Form>
@@ -74,9 +115,9 @@ export class Posts extends Component {
                   <Modal.Footer>
                     <Button
                       variant="primary"
-                      onClick={(e) => this.setState({ show: false })}
+                      onClick={() => this.setState({ show: false },()=> this.editPost())}
                     >
-                      Save Changes
+                      Update
                     </Button>
                   </Modal.Footer>
                 </Modal>
@@ -85,14 +126,14 @@ export class Posts extends Component {
           </div>
         </div>
         <div id="postBody">
-          <p>
-            {this.props.text} 
-          </p>
-          <img
-            className="img-fluid"
-            src={this.props.image==='none' || !this.props.image ? this.state.image : this.props.image}
-            alt=""
-          />
+          <p className="ml-1">{this.props.posts.text}</p>
+          {this.props.posts.image === undefined ? null : (
+            <img
+              className="img-fluid w-100"
+              src={this.props.posts.image}
+              alt=""
+            />
+          )}
         </div>
         <div id="postFooter">
           <div style={{ display: "flex", padding: "10px", fontSize: "12px" }}>

@@ -4,10 +4,37 @@ import {RiPencilLine} from 'react-icons/ri'
 import {IconContext} from 'react-icons'
 import { Link } from 'react-router-dom'
 import {Modal,Form,Button} from 'react-bootstrap'
+import axios from 'axios'
+import { MdExpandMore } from 'react-icons/md'
 
 class Experiences extends Component {
   state ={
-    show : false
+    show : false,
+    file :null,
+    role :'',
+    company:'',
+    startDate:'',
+  }
+  async postExp(){
+    let expe ={
+      role:this.state.role,
+      company:this.state.company,
+      startDate:this.state.startDate
+    }
+    let postPic={
+      method: "POST",
+      url :`https://striveschool.herokuapp.com/api/profile/${this.props.user}/experiences/${this.props.id}/picture`,
+      headers: {Authorization: "Basic " + btoa("user7:3UU5dYFvenRuRP7E")},
+        data:this.state.file
+      }
+      let postExp={
+        method: "PUT",
+        url :`https://striveschool.herokuapp.com/api/profile/${this.props.user}/experiences/${this.props.id}`,
+        headers: {Authorization: "Basic " + btoa("user7:3UU5dYFvenRuRP7E")},
+          data:expe
+        }
+        let pic = await axios(postPic)
+        let exp = await axios(postExp)
   }
   render() {
     return (
@@ -43,23 +70,17 @@ class Experiences extends Component {
                   </Modal.Header>
                   <Modal.Body>
                     <Form>
+                    <Form.Control className="mt-2" onChange={(e)=> this.setState({role:e.target.value})} type="text" placeholder={this.props.role} />
+                    <Form.Control className="mt-2" onChange={(e)=> this.setState({company:e.target.value})}  type="text" placeholder={this.props.company} />
+                    <Form.Control className="mt-2" onChange={(e)=> this.setState({startDate:e.target.value})}  type="date" placeholder={this.props.startDate} />
                       <Form.Group>
                         <Form.File
                           label="Example file input"
                           onChange={
                             (event) => {
-                                console.log(event.target.files[0]);
                                 const formData = new FormData();
                                 formData.append("experience", event.target.files[0]);
-                                console.log(formData);
-                                fetch( `https://striveschool.herokuapp.com/api/profile/${this.props.user}/experiences/${this.props.id}/picture`,
-                                  {
-                                    method: "POST",
-                                    body: formData,
-                                    headers: {
-                                    Authorization: "Basic " + btoa("user7:3UU5dYFvenRuRP7E")}
-                                  }
-                                    ).then(element=> console.log(element.json()))
+                                this.setState({file:formData})
                               }}                         
                         />
                       </Form.Group>
@@ -68,7 +89,9 @@ class Experiences extends Component {
                       <Modal.Footer>
                         <Button
                           variant="primary"
-                          onClick={(e) => this.setState({ show: false })}
+                          onClick={(e) => {
+                            this.postExp()
+                            this.setState({ show: false })}}
                         >
                           Save Changes
                         </Button>

@@ -1,5 +1,5 @@
 .home{
-    border:solid 2px #DADDDF;
+    border:solid 1px #8f9294;
 }
 .back{
     height: 3em;
@@ -89,7 +89,7 @@
   display:flex; 
 }
 #writePost{
-    height: 100px;
+    height: 60px;
     border: 2px solid #DADDDF;
     display: flex;
     justify-content: space-between;
@@ -118,9 +118,9 @@
   }
 
   #writePostFooter{
-    padding: 10px;
+    padding-left: 0.5em;
     width: 100%;
-    height: 50px;
+    height: 25px;
     border: 2px solid #DADDDF;
     border-top: none;
     font-size: 0.8em;
@@ -157,8 +157,7 @@
     padding: 0 10px;
   }
   #postBody img{
-    height: 400px;
-    width: 80vw;
+    height: 300px;
   }
 
   .newsFeedRightSidebar{
@@ -180,4 +179,24 @@
     color: #0073b1;
     cursor: pointer;
   }
-
+textarea.form-control{
+  border: none;
+  box-shadow: none !important;
+  margin-bottom: 0.5em;
+}
+textarea.form-control:hover{
+  border: none !important;
+  box-shadow: none;
+  background-color: #f1f1f1;
+}
+textarea.form-control:active{
+  border: none !important;
+  box-shadow: none;
+}
+textarea.form-control:visited{
+  border: none !important;
+  box-shadow: none !important;
+}
+.modal-header {
+  padding: 0.5em;
+}
