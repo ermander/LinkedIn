@@ -12,6 +12,7 @@ export class Feed extends Component {
   state = {
     posts: [],
     username: [],
+    loading : true
   };
   componentDidMount = async () => {
     let response = await fetch(
@@ -36,7 +37,7 @@ export class Feed extends Component {
     );
     let userName = await user.json();
     let posts = await response.json();
-    this.setState({ posts:posts.reverse(), username: userName }, () =>
+    this.setState({ posts:posts.reverse(), username: userName,loading:false }, () =>
       console.log(this.state.username)
     );
     console.log(this.state.posts);
@@ -80,19 +81,23 @@ export class Feed extends Component {
           </p>
         </div>
         <hr></hr>
-        {this.state.posts.map((element , i) => {
-          return (
-            <Posts
-            user={this.state.username.name}
-            name={element.user.name}
-            id={element._id}
-            image={element.image}
-            bio={element.user.bio}
-            text={element.text}
-            key={i}
-            />
+        {this.state.loading ? <div id='loadingAnimation'><img src="https://i.stack.imgur.com/h6viz.gif" alt=""/></div>
+         :
+        this.state.posts.map((element , i) => {
+            return (
+              <Posts
+                user={this.state.username.name}
+                name={element.user.name}
+                id={element._id}
+                image={element.image}
+                bio={element.user.bio}
+                text={element.text}
+                key={i}
+                date ={element.updatedAt.slice(0,10)}
+              />
             );
-          })}
+          })
+        }
         </Row>
       </Container>
     );
