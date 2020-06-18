@@ -8,6 +8,7 @@ import Experiences from "./Experiences";
 import axios from "axios";
 import {Link} from 'react-router-dom';
 import {FaPlus} from 'react-icons/fa';
+import '../../styles/ProfilePage.css';
 
 class Profile extends Component {
   state = {

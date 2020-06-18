@@ -8,7 +8,7 @@ const PageViewer = (data) => {
     <li className='mb-2'>
         <Row>
             <Col className='col-3'>
-                <Image src='https://capenetworks.com/static/images/testimonials/user-icon.svg' style={{width: 57.5 + "px", height: 57.5 + "px", borderRadius: 30 + 'px'}} alt="User's picture"/>
+                <Image src='https://capenetworks.com/static/images/testimonials/user-icon.svg' style={{width: 57.5 + "px", borderRadius: 30 + 'px'}} alt="User's picture"/>
             </Col>
                 <Col className='col-7 d-flex flex-column'>
                     <span>{data.data.name + " " + data.data.surname}</span>

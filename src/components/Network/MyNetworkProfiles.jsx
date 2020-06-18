@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const MyNetworkProfiles = (data) => {
     console.log(data);
     return(
-        <Col className='mb-3'>
+        <Col>
             <Card className='h-100'>
                 <Card.Img variant="top" src="https://capenetworks.com/static/images/testimonials/user-icon.svg" />
                 <Card.Body className='d-flex flex-column'>
@@ -13,7 +13,7 @@ const MyNetworkProfiles = (data) => {
                     <Card.Text>
                     {data.data.bio}
                     </Card.Text>
-                    <Link to={'/profile/'+data.data.username}><Button className='mt-auto' variant="primary">View profile</Button></Link>
+                    <Link to={'/profile/'+ data.data.username}><Button variant="outline" value='View profile'>View profile</Button></Link>
                 </Card.Body>
             </Card>
         </Col>
