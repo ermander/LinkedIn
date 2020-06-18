@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import {Jumbotron,Container,Button,Dropdown,DropdownButton} from 'react-bootstrap'
-import '../../styles/MainJumbotron.css'
 import {IconContext} from 'react-icons'
 import {FaCamera,FaPencilAlt,FaEye} from 'react-icons/fa'
 import {RiPencilLine} from 'react-icons/ri'

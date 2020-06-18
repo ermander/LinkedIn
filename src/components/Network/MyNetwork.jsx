@@ -1,6 +1,8 @@
 import React from 'react';
-import {Container , Row } from 'react-bootstrap';
+import {Container , Row , Col} from 'react-bootstrap';
 import MyNetworkProfiles from './MyNetworkProfiles';
+import '../../styles/MyNetwork.css';
+import NavBar from '../NavBar';
 
 class MyNetwork extends React.Component {
 
@@ -22,11 +24,16 @@ class MyNetwork extends React.Component {
     render(){
         return(
             <Container>
-                <Row className="row-cols-4">
+              <Row>
+                <NavBar />
+                <Col className='col-12 myNetworkUsersCol'>
+                  <Row className="row-cols-5">
                         {this.state.data.map(function(data , i){
                             return <MyNetworkProfiles data={data} key={i}/>
                         })}
-                </Row>
+                  </Row>
+                </Col>
+              </Row>
             </Container>
         )
     }

@@ -85,7 +85,7 @@ class NavBar extends Component {
               </Dropdown.Menu>
             </Dropdown>
           </Form>
-          <Nav className="ml-auto  ">
+          <Nav className="ml-auto">
             <Link className="nav-link navIcon" to="/feed/me">
               <AiOutlineHome style={{ fontSize: "20px" }} />
               <div style={{ fontSize: "13px" }}>Home</div>
@@ -107,7 +107,6 @@ class NavBar extends Component {
               <IoMdNotificationsOutline style={{ fontSize: "20px" }} />
               <div style={{ fontSize: "13px" }}> Notifications</div>
             </Nav.Link>
-            <Nav.Link className="navIcon">
               <Link className="nav-link" to="/profile/me">
                 <img
                   src={photo}
@@ -128,7 +127,6 @@ class NavBar extends Component {
                   </svg>
                 </div>
               </Link>
-            </Nav.Link>
             <Nav.Link
               style={{ borderRight: "1px grey solid", height: "59px" }}
             ></Nav.Link>
