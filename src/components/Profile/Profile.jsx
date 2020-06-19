@@ -26,8 +26,8 @@ class Profile extends Component {
       "https://striveschool.herokuapp.com/api/profile/me",
       {
         method: "GET",
-        headers: new Headers({
-          Authorization: "Basic " + btoa("user7:3UU5dYFvenRuRP7E"),
+        headers: new Headers({  //btoa('user26:Q2h7j3FtxhdxMdab') Strahinja, btoa("user7:3UU5dYFvenRuRP7E") Detart
+          Authorization: "Basic " + btoa("user7:3UU5dYFvenRuRP7E"), 
           "Content-type": "application/json",
         }),
       }
