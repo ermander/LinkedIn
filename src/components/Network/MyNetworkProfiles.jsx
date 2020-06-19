@@ -6,8 +6,11 @@ const MyNetworkProfiles = (data) => {
     console.log(data);
     return(
         <Col>
-            <Card className='h-100'>
-                <Card.Img variant="top" src="https://capenetworks.com/static/images/testimonials/user-icon.svg" />
+            <Card className='h-100 networkCards'>
+                {data.data.image ? <Card.Img variant="top" src={data.data.image} />
+                 :
+                 <Card.Img variant="top" src="https://capenetworks.com/static/images/testimonials/user-icon.svg" />
+                 }
                 <Card.Body className='d-flex flex-column'>
                     <Card.Title>{data.data.name + " " + data.data.surname}</Card.Title>
                     <Card.Text>

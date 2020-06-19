@@ -19,3 +19,15 @@
     color:#0073b1;
     border-radius: 2px;
 }
+.networkCards img{
+    width: 70%;
+    height: 130px;
+    border-radius: 50%;
+    margin: 10px auto;
+}
+.networkCards .card-body{
+    font-size: 12px !important;
+}
+.networkCards .card-title {
+    font-size: 16px !important;
+}

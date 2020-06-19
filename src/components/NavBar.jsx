@@ -27,10 +27,23 @@ class NavBar extends Component {
     search: "",
     users: [],
     show: false,
+    image :''
   };
 
-  componentDidMount() {
+  componentDidMount= async()=> {
     this.setState({ users: this.props.users });
+    let response = await fetch(
+      "https://striveschool.herokuapp.com/api/profile/me",
+      {
+        method: "GET",
+        headers: new Headers({
+          Authorization: "Basic " + btoa("user7:3UU5dYFvenRuRP7E"),
+          "Content-type": "application/json",
+        }),
+      }
+    )
+    let parsedJson = await response.json()
+    this.setState({image : parsedJson.image})
   }
   render() {
     return (
@@ -109,7 +122,7 @@ class NavBar extends Component {
             </Nav.Link>
             <Link className="nav-link" to="/profile/user7">
               <img
-                src={photo}
+                src={this.state.image}
                 style={{ borderRadius: "50%", height: "20px", width: "20px" }}
               ></img>
               <div style={{ fontSize: "13px" }}>

@@ -4,6 +4,23 @@ import "../../styles/HomePage.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default class homeprofile extends Component {
+  state = {
+    image:''
+  }
+  componentDidMount = async()=>{
+    let response = await fetch(
+      "https://striveschool.herokuapp.com/api/profile/me",
+      {
+        method: "GET",
+        headers: new Headers({
+          Authorization: "Basic " + btoa("user7:3UU5dYFvenRuRP7E"),
+          "Content-type": "application/json",
+        }),
+      }
+    )
+    let parsedJson = await response.json()
+    this.setState({image : parsedJson.image})
+  }
   render() {
     return (
       <div className="">
@@ -16,7 +33,7 @@ export default class homeprofile extends Component {
         </div>
         <img
           className="img-fluid rounded-circle first"
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png"
+          src={this.state.image}
         />
         <div className=" home p-2 text-center" style={{ borderBottom: "0px" }}>
           <p className="p1">Welcome, {this.props.name}</p>
