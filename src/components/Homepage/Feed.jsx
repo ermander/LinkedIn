@@ -46,7 +46,7 @@ class Feed extends Component {
         <Row>
           <hr></hr>
           {this.state.loading ? (
-            <div id="loadingAnimation">
+            <div className='col col-12 d-flex justify-content-center' id="loadingAnimation">
               <img src="https://i.stack.imgur.com/h6viz.gif" alt="" />
             </div>
           ) : (

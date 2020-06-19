@@ -241,5 +241,5 @@ textarea.form-control:visited{
 }
 #feed #loadingAnimation{
   top: 10%;
-  left: 10%;
+  left: 0px;
 }
