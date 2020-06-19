@@ -12,22 +12,26 @@
     top: 1.5em;
 }
 .p1{
-    font-size: 0.9em;
-    margin-top: 2em;
+    font-size: 16px;
+    margin-top: 2.5em;
     margin-bottom: 0;
 }
 .a1{
-  font-size: 0.6em;
+  font-size: 12px;
   color:blue;  
 }
 .p2{
-    font-size:0.6em;
+    font-size:12px;
      margin: 0;
      opacity:0.7;
 }
 .p3{
-    font-size: 0.6em;
+    font-size: 12px;
      margin: 0;
+}
+.p4{
+  font-size: 12px;
+  color:rgba(0, 0, 0, 0.9);
 }
 .left{
     text-align: left;

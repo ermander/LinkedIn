@@ -73,73 +73,46 @@ export default class Homepage extends Component {
   render() {
     return (
       <>
-        <NavBar />
-        <Container className="mt-5 pt-5">
-          <Row>
-            <Col className="col-2 offset-1">
-              <HomeProfile name={this.state.user.name} />
-              <Leftsidebar />
-            </Col>
-            <Col className="col-5">
-              <Row className="m-1 feedShadow">
-                <Col id="writePost" className="px-0">
-                  <div
-                    onClick={()=>this.setState({showModal:true})}
-                    className="col col-6 w-100 d-flex align-items-center"
-                    style={{ margin: "0px" }}
-                  >
-                    <a>
-                      <FiEdit style={{ fontSize: "1.1rem" }} />
-                    </a>
-                    <a style={{ fontSize: "1.1em" }}>Start a Post</a>
-                  </div>
-                  <div id="icons" className="col col-6 px-0">
-                    <div className="col col-4 d-flex justify-content-center align-items-center">
-                      <GrCamera style={{ fontSize: "1.1rem" }} />
-                    </div>
-
-                    <div className="col col-4 d-flex justify-content-center align-items-center">
-                      <FiVideo style={{ fontSize: "1.1rem" }} />
-                    </div>
-
-                    <div className="col col-4 d-flex justify-content-center align-items-center">
-                      <AiOutlineFileText style={{ fontSize: "1.1rem" }} />
-                    </div>
-                  </div>
-                </Col>
-                <div id="writePostFooter">
-                  <p>
-                    <a href="">Write an article</a> on LinkedIn
-                  </p>
-                </div>
-              </Row>
-              <Feed onclick={(e) => this.setState({ text: e.target.value })} />
-              <Modal
-                onchange={(e) =>
-                  this.setState(
-                    { postsText: e.target.value },
-                    console.log(this.state.postsText)
-                  )
-                }
-                name={this.state.user.name}
-                handleClose={() => {
-                  this.setState({ showModal: false });
-                  this.postData();
-                }}
-                show={this.state.showModal}
-                file={(event) => {
-                  console.log(event.target.files[0]);
-                  const formData = new FormData();
-                  formData.append("post", event.target.files[0]);
-                  this.setState({ inputFile: formData });
-                }}
-              />
-            </Col>
-            <Col className="col-3">
-              <NewsFeedRightSidebar />
-            </Col>
-          </Row>
-        </Container>
+      <NavBar />
+      <Container className="mt-5 pt-5">
+        <Row>
+          <Col lg={3}>
+            <HomeProfile name={this.state.user.name} />
+            <Leftsidebar />
+          </Col>
+          <Col lg={6} style={{paddingLeft: '0px'}}>
+            <Feed
+              postButton={() => {
+                this.setState({ showModal: true });
+              }}
+            />
+            <Modal
+            
+            onchange={(e) =>
+              this.setState(
+                { postsText: e.target.value },
+                console.log(this.state.postsText)
+              )
+            }
+            name={this.state.user.name}
+            handleClose={() => {
+              this.setState({ showModal: false });
+              this.postData();
+            }}
+            show={this.state.showModal}
+            file={(event) => {
+              console.log(event.target.files[0]);
+              const formData = new FormData();
+              formData.append("post", event.target.files[0]);
+              this.setState({ inputFile: formData });
+            }}
+            />
+          </Col>
+          <Col lg={3} style={{paddingLeft: '0px'}}>
+            <NewsFeedRightSidebar />
+          </Col>
+        </Row>
+      </Container>
       </>
     );
   }
