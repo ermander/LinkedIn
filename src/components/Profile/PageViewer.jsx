@@ -3,12 +3,12 @@ import { Row, Col , Image} from 'react-bootstrap';
 import { FaUserPlus } from 'react-icons/fa';
 
 const PageViewer = (data) => {
-    console.log(data)
+    console.log(data, 'hello')
     return(
     <li className='mb-2'>
         <Row>
             <Col className='col-3'>
-                <Image src='https://capenetworks.com/static/images/testimonials/user-icon.svg' style={{width: 57.5 + "px", borderRadius: 30 + 'px'}} alt="User's picture"/>
+                <Image src={data.data.image} style={{width: 57.5 + "px", borderRadius: 30 + 'px'}} alt="User's picture"/>
             </Col>
                 <Col className='col-7 d-flex flex-column'>
                     <span>{data.data.name + " " + data.data.surname}</span>
