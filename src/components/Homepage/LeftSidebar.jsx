@@ -15,7 +15,7 @@ const Leftsidebar = () => (
   <div className="leftSidebar  mt-3  home">
     <div>
       <Row className="mr-auto d-flex flex-row ">
-        <Col xs={10} className="pl-4 mt-2 left p4" >
+        <Col xs={10} className="pl-4 mt-2 left" >
           Recent
         </Col>{" "}
         <Col xs={2}>
@@ -47,7 +47,7 @@ const Leftsidebar = () => (
     </div>
     <div className="">
       <Row className="mr-auto d-flex flex-row">
-        <Col xs={10} className="pl-4 pt-2 left p4" >
+        <Col xs={10} className="pl-4 pt-2 left" >
           Groups
         </Col>{" "}
         <Col xs={2}>
@@ -73,7 +73,7 @@ const Leftsidebar = () => (
     </div>
     <div className="">
       <Row className="mr-auto d-flex flex-row">
-        <Col xs={10} className="pl-4 left p4" >
+        <Col xs={10} className="pl-4 left" >
           Events
         </Col>{" "}
         <Col xs={2}>

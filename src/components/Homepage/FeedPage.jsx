@@ -66,7 +66,7 @@ export default class Homepage extends Component {
     let User = await axios(user);
     let Posts = await axios(posts);
     this.setState({ user: User.data, posts: Posts.data }, () =>
-      console.log(this.state.user, this.state.posts)
+      console.log(this.state.user, this.state.posts.reverse())
     );
   }
 
@@ -81,7 +81,7 @@ export default class Homepage extends Component {
             <Leftsidebar />
           </Col>
           <Col lg={6} style={{paddingLeft: '0px'}}>
-          <Row className="m-1 feedShadow">
+          <Row className="feedShadow">
                 <Col id="writePost" className="px-0">
                   <div
                     onClick={()=>this.setState({showModal:true})}
