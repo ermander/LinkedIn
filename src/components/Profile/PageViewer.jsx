@@ -3,7 +3,6 @@ import { Row, Col , Image} from 'react-bootstrap';
 import { FaUserPlus } from 'react-icons/fa';
 
 const PageViewer = (data) => {
-    console.log(data, 'hello')
     return(
     <li className='mb-2'>
         <Row>
