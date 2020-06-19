@@ -254,6 +254,7 @@
   /* FOOTER CSS */
 
   .footer div.list-group-item {
+    background-color: rgba(0, 0, 0, 0);
     font-size: 0.8rem;
     font-weight: 600;
     margin-top: 0.3em;
