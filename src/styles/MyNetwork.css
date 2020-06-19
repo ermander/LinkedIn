@@ -27,3 +27,6 @@
 .networkCards .card-title {
     font-size: 16px !important;
 }
+.networkContainer{
+    margin-top: 60px;
+}

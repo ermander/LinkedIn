@@ -23,8 +23,8 @@ class MyNetwork extends React.Component {
 
     render(){
         return(
-            <Container>
-              <Row>
+            <Container className='networkContainer'>
+              <Row >
                 <NavBar />
                 <Col className='col-12 myNetworkUsersCol'>
                   <Row className="row-cols-6">
