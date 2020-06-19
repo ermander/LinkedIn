@@ -39,7 +39,7 @@ export class MainJumbotron extends Component {
     let response = await fetch(`https://striveschool.herokuapp.com/api/profile/${this.state.username}`,{
       method :'GET',
       headers : new Headers({
-        'Authorization': 'Basic dXNlcjE4OlEyejVWN2hFRlU2SktSckU=',
+        Authorization: "Basic " + btoa("user7:3UU5dYFvenRuRP7E"),
         'Content-type': "application/json"
       })
     })
