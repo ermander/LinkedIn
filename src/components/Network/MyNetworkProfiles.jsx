@@ -7,7 +7,7 @@ const MyNetworkProfiles = (data) => {
     return(
         <Col>
             <Card className='h-100'>
-                <Card.Img variant="top" src="https://capenetworks.com/static/images/testimonials/user-icon.svg" />
+                <Card.Img variant="top" style={{height :"200px"}} src={data.data.image} />
                 <Card.Body className='d-flex flex-column'>
                     <Card.Title>{data.data.name + " " + data.data.surname}</Card.Title>
                     <Card.Text>
