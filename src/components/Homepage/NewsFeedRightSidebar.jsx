@@ -3,6 +3,7 @@ import { Col , Row , Button , Image, Container } from 'react-bootstrap';
 import { GoInfo , GoPlus } from 'react-icons/go';
 import { BsChevronCompactDown } from 'react-icons/bs';
 import '../../styles/HomePage.css'
+import { Link } from 'react-router-dom'
 
 class NewsFeedRightSidebar extends React.Component {
     render(){
@@ -82,20 +83,20 @@ class NewsFeedRightSidebar extends React.Component {
                     <Col className='col-12 newsFeedRightSidebar pt-2 '  style={{borderTop: '2px solid grey'}}>
                         <ul>
                             <div className='d-flex justify-content-around'>
-                                <li>About</li>
-                                <li>Accessibility</li>
-                                <li>Help</li>
+                                <Link>About</Link>
+                                <Link>Accessibility</Link>
+                                <Link>Help</Link>
                             </div>
                             <div className='d-flex justify-content-around'>
-                                <li>Privacy & Terms <BsChevronCompactDown /></li>
-                                <li>Ad Choices</li>
-                                <li>Advertising</li>
+                                <Link>Privacy & Terms <BsChevronCompactDown /></Link>
+                                <Link>Ad Choices</Link>
+                                <Link>Advertising</Link>
                             </div>
                             <div className='d-flex justify-content-around'>
-                                <li>Business Services <BsChevronCompactDown /></li>
-                                <li>Get the LinkedIn app</li>
+                                <Link>Business Services <BsChevronCompactDown /></Link>
+                                <Link>Get the LinkedIn app</Link>
                             </div>
-                            <li className='d-flex justify-content-around'>More</li>
+                            <Link className='d-flex justify-content-around'>More</Link>
                         </ul>
                     </Col>
                     <Col className='d-flex justify-content-center  align-items-center'>
