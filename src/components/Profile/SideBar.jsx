@@ -25,21 +25,21 @@ class SideBar extends React.Component {
         return(
             <Col className='col-4 sideBar'>
                 <div className='mb-3'>
-                    <div className='d-flex justify-content-start align-items-center'>
+                    <div className='d-flex justify-content-between align-items-center'>
                         <span>Edit public profile & URL</span><FaQuestionCircle />
                     </div>
                     <hr className='my-4'/>
-                    <div className='d-flex justify-content-start align-items-center'>
+                    <div className='d-flex justify-content-between align-items-center'>
                         <span>Add profile in another language</span><FaQuestionCircle />
                     </div>
                 </div>
                 <div className='banerContainer'>
-                    <Image src='https://blog.academyoflearning.com/wp-content/uploads/2017/09/linkedin-gif.gif' style={{width: 100 + "%", height: 200 + "px"}}/>
+                    <Image src='https://blog.academyoflearning.com/wp-content/uploads/2017/09/linkedin-gif.gif' style={{width: 100 + "%"}}/>
                 </div>
                 <div className='mt-4'>
                     <h2>People Also Viewed</h2>
                     <ul>
-                        {this.state.data.slice(20,26).map(function(data , i){
+                        {this.state.data.slice(21,27).map(function(data , i){
                             return <PageViewer data={data} key={i}/>
                            
                         })}
