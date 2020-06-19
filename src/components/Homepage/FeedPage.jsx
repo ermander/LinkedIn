@@ -76,11 +76,11 @@ export default class Homepage extends Component {
         <NavBar />
         <Container className="mt-5 pt-5">
           <Row>
-            <Col className="col-2 offset-1">
+            <Col className="col-3">
               <HomeProfile name={this.state.user.name} />
               <Leftsidebar />
             </Col>
-            <Col className="col-5">
+            <Col className="col-6">
               <Row className="m-1 feedShadow">
                 <Col id="writePost" className="px-0">
                   <div
