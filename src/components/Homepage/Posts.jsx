@@ -27,8 +27,7 @@ class Posts extends Component {
         method: "PUT",
         url:`https://striveschool.herokuapp.com/api/posts/${this.props.posts._id}`,
         headers: {
-          Authorization:
-            "Basic " + btoa("user7:3UU5dYFvenRuRP7E"),
+          Authorization: "Basic " + btoa("user7:3UU5dYFvenRuRP7E"),
         },
         data: {text:this.state.text},
       }        
@@ -66,7 +65,7 @@ class Posts extends Component {
   // }
   render() {
     return (
-      <Container className="mt-2 home px-0">
+      <Container className="mt-2 home px-0 forPostsShadow">
         <div className="p-1" id="postHeader">
           <div>
             <img src={this.props.posts.user.image} alt="" />
@@ -88,8 +87,8 @@ class Posts extends Component {
             {this.props.user.name === this.props.posts.user.name ? (
               <>
                 <Dropdown>
-                    <Dropdown.Toggle>
-                    <BsThreeDots/>
+                    <Dropdown.Toggle className='d-flex'>
+                    <BsThreeDots style={{marginLeft:'5px'}}/>
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu>

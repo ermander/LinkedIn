@@ -23,7 +23,7 @@ class SideBar extends React.Component {
     render() {
         console.log(this.state.data.slice(0,6))
         return(
-            <Col className='col-3 sideBar'>
+            <Col className='col-4 sideBar'>
                 <div className='mb-3'>
                     <div className='d-flex justify-content-start align-items-center'>
                         <span>Edit public profile & URL</span><FaQuestionCircle />

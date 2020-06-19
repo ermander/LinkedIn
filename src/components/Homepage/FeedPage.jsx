@@ -66,22 +66,22 @@ export default class Homepage extends Component {
     let User = await axios(user);
     let Posts = await axios(posts);
     this.setState({ user: User.data, posts: Posts.data }, () =>
-      console.log(this.state.user, this.state.posts)
+      console.log(this.state.user, this.state.posts.reverse())
     );
   }
 
   render() {
     return (
       <>
-        <NavBar />
-        <Container className="mt-5 pt-5">
-          <Row>
-            <Col className="col-2 offset-1">
-              <HomeProfile name={this.state.user.name} />
-              <Leftsidebar />
-            </Col>
-            <Col className="col-5">
-              <Row className="m-1 feedShadow">
+      <NavBar />
+      <Container className="mt-5 pt-5">
+        <Row>
+          <Col lg={3}>
+            <HomeProfile name={this.state.user.name} />
+            <Leftsidebar />
+          </Col>
+          <Col lg={6} style={{paddingLeft: '0px'}}>
+          <Row className="feedShadow">
                 <Col id="writePost" className="px-0">
                   <div
                     onClick={()=>this.setState({showModal:true})}
@@ -113,33 +113,38 @@ export default class Homepage extends Component {
                   </p>
                 </div>
               </Row>
-              <Feed onclick={(e) => this.setState({ text: e.target.value })} />
-              <Modal
-                onchange={(e) =>
-                  this.setState(
-                    { postsText: e.target.value },
-                    console.log(this.state.postsText)
-                  )
-                }
-                name={this.state.user.name}
-                handleClose={() => {
-                  this.setState({ showModal: false });
-                  this.postData();
-                }}
-                show={this.state.showModal}
-                file={(event) => {
-                  console.log(event.target.files[0]);
-                  const formData = new FormData();
-                  formData.append("post", event.target.files[0]);
-                  this.setState({ inputFile: formData });
-                }}
-              />
-            </Col>
-            <Col className="col-3">
-              <NewsFeedRightSidebar />
-            </Col>
-          </Row>
-        </Container>
+            <Feed
+              postButton={() => {
+                this.setState({ showModal: true });
+              }}
+            />
+            <Modal
+            
+            onchange={(e) =>
+              this.setState(
+                { postsText: e.target.value },
+                console.log(this.state.postsText)
+              )
+            }
+            name={this.state.user.name}
+            handleClose={() => {
+              this.setState({ showModal: false });
+              this.postData();
+            }}
+            show={this.state.showModal}
+            file={(event) => {
+              console.log(event.target.files[0]);
+              const formData = new FormData();
+              formData.append("post", event.target.files[0]);
+              this.setState({ inputFile: formData });
+            }}
+            />
+          </Col>
+          <Col lg={3} style={{paddingLeft: '0px'}}>
+            <NewsFeedRightSidebar />
+          </Col>
+        </Row>
+      </Container>
       </>
     );
   }
