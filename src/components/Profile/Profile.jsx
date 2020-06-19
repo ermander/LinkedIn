@@ -74,7 +74,7 @@ class Profile extends Component {
         <NavBar/>
         {this.state.loading ? 
         <div id='loadingAnimation'><img src="https://i.stack.imgur.com/h6viz.gif" alt=""/></div> : 
-        <Container style={{ marginTop: "58px" }}>
+        <Container className='mt-5 pt-3'>
           <Row>
             <Col className="col-8">
               <MainJumbotron username={this.props.match.params.id}/>

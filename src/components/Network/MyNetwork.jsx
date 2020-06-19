@@ -26,7 +26,7 @@ class MyNetwork extends React.Component {
             <Container>
               <Row>
                 <NavBar />
-                <Col className='col-12 myNetworkUsersCol'>
+                <Col className='col-12 myNetworkUsersCol mt-5 pt-3'>
                   <Row className="row-cols-5">
                         {this.state.data.map(function(data , i){
                             return <MyNetworkProfiles data={data} key={i}/>
