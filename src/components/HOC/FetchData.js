@@ -27,7 +27,7 @@ function userData(WrappedComponent) {
     render() {
       return <WrappedComponent users={this.state.users} />;
     }
-  };
+  }; 
 }
 export default userData;
 
