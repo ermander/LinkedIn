@@ -71,7 +71,7 @@ class Posts extends Component {
             <img src={this.props.posts.user.image} alt="" />
             <div>
               <p>
-                <Link to={"/profile/" + this.props.user.username}>
+                <Link className='postUsernames' to={"/profile/" + this.props.user.username}>
                   {this.props.posts.user.name}
                 </Link>
               </p>
