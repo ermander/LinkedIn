@@ -63,7 +63,7 @@ export class MainJumbotron extends Component {
           </IconContext.Provider>
         </div>
         <div id='profileSection'>
-          <div >
+          <div style={{cursor: 'pointer'}}>
             {this.state.data.image ?<img onClick={this.verifyProfile} src={this.state.data.image} alt=""/> 
           : <img onClick={this.verifyProfile} src="https://capenetworks.com/static/images/testimonials/user-icon.svg" alt=""/>  
           }
