@@ -55,6 +55,7 @@ class Feed extends Component {
                 <Posts
                   user={this.state.username}
                   posts={element}
+                  key={i}
                 />
               );
             })
