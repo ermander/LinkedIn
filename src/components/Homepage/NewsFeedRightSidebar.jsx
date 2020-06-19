@@ -44,7 +44,7 @@ class NewsFeedRightSidebar extends React.Component {
                         <span className="spa1" >View all recommendations</span>
                     </Col>
 
-                    <Col className='col-12 mt-2  home ' style={{padding: '0px'}}>
+                    <Col className='col-12 mt-2  home leftSidebarShadow ' style={{padding: '0px'}}>
                         <div className='banerContainer'>
                             <Image src='https://miro.medium.com/max/832/1*9iVDfnmJ8Ab1aEkHAKarrQ.gif' style={{width: 100 + "%"}}/>
                         </div>
