@@ -24,8 +24,7 @@ class Posts extends Component {
         method: "PUT",
         url:`https://striveschool.herokuapp.com/api/posts/${this.props.posts._id}`,
         headers: {
-          Authorization:
-            "Basic " + btoa("user7:3UU5dYFvenRuRP7E"),
+          Authorization: "Basic " + btoa("user7:3UU5dYFvenRuRP7E"),
         },
         data: {text:this.state.text},
       }        
