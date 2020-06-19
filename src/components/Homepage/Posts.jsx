@@ -47,7 +47,7 @@ class Posts extends Component {
   }
   render() {
     return (
-      <Container className="mt-2 home px-0">
+      <Container className="mt-2 home px-0 forPostsShadow">
         <div className="p-1" id="postHeader">
           <div>
             <img src={this.props.posts.user.image} alt="" />

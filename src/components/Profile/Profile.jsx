@@ -75,7 +75,7 @@ class Profile extends Component {
         <div id='loadingAnimation'><img src="https://i.stack.imgur.com/h6viz.gif" alt=""/></div> : 
         <Container style={{ marginTop: "58px" }}>
           <Row>
-            <Col className="col-7 offset-1">
+            <Col className="col-8">
               <MainJumbotron username={this.props.match.params.id}/>
               <div id='experiences'>
                 <div id='header'>
