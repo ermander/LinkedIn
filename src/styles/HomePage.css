@@ -341,3 +341,7 @@ textarea.form-control:visited{
   font-weight: 500;
   color: black;
 }
+
+.postsButtons:hover{
+  color: #0073b1;
+}

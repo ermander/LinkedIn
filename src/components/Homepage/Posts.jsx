@@ -189,7 +189,7 @@ class Posts extends Component {
           </div>
           <hr style={{ padding: "0", margin: "0" }}></hr>
           <div>
-            <div onClick={this.handleLikes} style={{ display: "flex",cursor:'pointer' }}>
+            <div onClick={this.handleLikes} style={{ display: "flex",cursor:'pointer' }} className='postsButtons'>
               <IconContext.Provider value={{}}>
                 <p>
                   <AiTwotoneLike />
@@ -197,7 +197,7 @@ class Posts extends Component {
               </IconContext.Provider>
               <p>Like</p>
             </div>
-            <div style={{ display: "flex" }}>
+            <div style={{ display: "flex" }} className='postsButtons'>
               <IconContext.Provider value={{}}>
                 <p onClick ={this.commentHandler}>
                   <MdComment />
@@ -205,7 +205,7 @@ class Posts extends Component {
               </IconContext.Provider>
               <p>Comment</p>
             </div>
-            <div style={{ display: "flex" }}>
+            <div style={{ display: "flex" }} className='postsButtons'>
               <IconContext.Provider value={{}}>
                 <p>
                   <FaShare />
