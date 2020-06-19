@@ -15,6 +15,13 @@
     color:#0073b1;
     border-radius: 2px;
 }
+
+.myNetworkUsersCol .col .card button:hover{
+    border-color: white;
+    color: white;
+    background-color: #0073b1;
+}
+
 .networkCards img{
     width: 70%;
     height: 130px;

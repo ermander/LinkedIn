@@ -16,7 +16,7 @@ const MyNetworkProfiles = (data) => {
                     <Card.Text>
                     {data.data.bio}
                     </Card.Text>
-                    <Link to={'/profile/'+ data.data.username}><Button variant="outline" value='View profile'>View profile</Button></Link>
+                    <Link to={'/profile/'+ data.data.username}><Button className='myNetworkButtons' variant="outline" value='View profile'>View profile</Button></Link>
                 </Card.Body>
             </Card>
         </Col>
