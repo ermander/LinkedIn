@@ -45,7 +45,7 @@ class NewsFeedRightSidebar extends React.Component {
                     {/* //#DADDDF */}
                     <Col className='col-12 mt-2  home ' style={{padding: '0px'}}>
                         <div className='banerContainer'>
-                            <Image src='https://via.placeholder.com/300' style={{width: 100 + "%"}}/>
+                            <Image src='https://miro.medium.com/max/832/1*9iVDfnmJ8Ab1aEkHAKarrQ.gif' style={{width: 100 + "%"}}/>
                         </div>
                     </Col>
 
@@ -55,9 +55,25 @@ class NewsFeedRightSidebar extends React.Component {
                             </div>
                             <Row>
                                 <Col className='d-flex mb-3 align-items-center'>
-                                    <Image src='https://via.placeholder.com/100x56' style={{width: 35 + "%"}} alt="User's picture"/>
+                                    <Image src='https://www.nobledesktop.com/image/blog/scrolling-code.gif' style={{width: 35 + "%"}} alt="User's picture"/>
                                     <div className='ml-1'>
-                                        <span className="spa3" >Video title</span>
+                                        <span className="spa3" >Learn Coding</span>
+                                    </div>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col className='d-flex mb-3 align-items-center'>
+                                    <Image src='https://thumbs.gfycat.com/DifficultLimpingBubblefish-small.gif' style={{width: 35 + "%"}} alt="User's picture"/>
+                                    <div className='ml-1'>
+                                        <span className="spa3" >Learn Coding</span>
+                                    </div>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col className='d-flex mb-3 align-items-center'>
+                                    <Image src='https://miro.medium.com/max/2160/1*9S3JhMtLGiacpNpziWGN1A.gif' style={{width: 35 + "%"}} alt="User's picture"/>
+                                    <div className='ml-1'>
+                                        <span className="spa3" >Learn Coding</span>
                                     </div>
                                 </Col>
                             </Row>
