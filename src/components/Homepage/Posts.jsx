@@ -69,8 +69,8 @@ class Posts extends Component {
             {this.props.user.name === this.props.posts.user.name ? (
               <>
                 <Dropdown>
-                    <Dropdown.Toggle>
-                    <BsThreeDots/>
+                    <Dropdown.Toggle className='d-flex'>
+                    <BsThreeDots style={{marginLeft:'5px'}}/>
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu>
