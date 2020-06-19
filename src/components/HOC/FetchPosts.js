@@ -26,7 +26,7 @@ function postsData(WrappedComponent) {
     render() {
       return <WrappedComponent posts={this.state.posts} />;
     }
-  };
+  }; 
 }
 export default postsData;
 

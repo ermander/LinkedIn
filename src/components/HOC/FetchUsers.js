@@ -9,7 +9,7 @@ function userData(WrappedComponent) {
 
     };
     componentDidMount() {
-      this.fetchUsers();
+      this.fetchUsers(); 
       
     }
     async fetchUsers() {
