@@ -26,8 +26,8 @@ export class Comments extends Component {
             <Container className='mb-2'>
                 <AddComment postId={this.props.id}/>
                 {this.state.comments ?
-                this.state.comments.map(comment =>
-                   <Comment info={comment} />
+                this.state.comments.map(comment => 
+                   <Comment info={comment} key={comment._id}/>
                 )
                 :null}
             </Container>
