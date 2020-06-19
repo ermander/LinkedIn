@@ -74,7 +74,7 @@ export default class Homepage extends Component {
     return (
       <>
       <NavBar />
-      <Container className="mt-5 pt-5">
+      <Container className="mt-5 pt-3">
         <Row>
           <Col lg={3}>
             <HomeProfile name={this.state.user.name} />
