@@ -21,7 +21,7 @@ function postsData(WrappedComponent) {
         },
       };
       let posts = await axios(postsData);
-      this.setState({ posts : posts.data.reverse() });
+      this.setState({ posts : posts.data.reverse().slice(0,20) });
     }
     render() {
       return <WrappedComponent posts={this.state.posts} />;
