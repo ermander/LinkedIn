@@ -81,6 +81,38 @@ export default class Homepage extends Component {
             <Leftsidebar />
           </Col>
           <Col lg={6} style={{paddingLeft: '0px'}}>
+          <Row className="m-1 feedShadow">
+                <Col id="writePost" className="px-0">
+                  <div
+                    onClick={()=>this.setState({showModal:true})}
+                    className="col col-6 w-100 d-flex align-items-center"
+                    style={{ margin: "0px" }}
+                  >
+                    <a>
+                      <FiEdit style={{ fontSize: "1.1rem" }} />
+                    </a>
+                    <a style={{ fontSize: "1.1em" }}>Start a Post</a>
+                  </div>
+                  <div id="icons" className="col col-6 px-0">
+                    <div className="col col-4 d-flex justify-content-center align-items-center">
+                      <GrCamera style={{ fontSize: "1.1rem" }} />
+                    </div>
+
+                    <div className="col col-4 d-flex justify-content-center align-items-center">
+                      <FiVideo style={{ fontSize: "1.1rem" }} />
+                    </div>
+
+                    <div className="col col-4 d-flex justify-content-center align-items-center">
+                      <AiOutlineFileText style={{ fontSize: "1.1rem" }} />
+                    </div>
+                  </div>
+                </Col>
+                <div id="writePostFooter">
+                  <p>
+                    <a href="">Write an article</a> on LinkedIn
+                  </p>
+                </div>
+              </Row>
             <Feed
               postButton={() => {
                 this.setState({ showModal: true });
