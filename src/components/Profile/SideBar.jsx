@@ -34,7 +34,7 @@ class SideBar extends React.Component {
                     </div>
                 </div>
                 <div className='banerContainer'>
-                    <Image src='https://via.placeholder.com/300' style={{width: 100 + "%", height: 200 + "px"}}/>
+                    <Image src='https://via.placeholder.com/300x300' style={{width: 100 + "%"}}/>
                 </div>
                 <div className='mt-4'>
                     <h2>People Also Viewed</h2>

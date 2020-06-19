@@ -123,6 +123,18 @@
   box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.75);
   transform: scale(1.02);
 }
+
+.leftSidebarShadow{
+  transform: scale(1);
+  transition: ease 0.3s;
+  background-color: white;
+}
+
+.leftSidebarShadow:hover{
+  box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.75);
+  transform: scale(1.02);
+}
+
   #icons > div {
     border-left: 2px solid #DADDDF;
   }

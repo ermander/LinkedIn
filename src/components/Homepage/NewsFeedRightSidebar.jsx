@@ -9,7 +9,7 @@ class NewsFeedRightSidebar extends React.Component {
         return(
             <Container>
                 <Row>
-                    <Col className='col-12 home' >
+                    <Col className='col-12 home leftSidebarShadow' >
                             <div className='d-flex justify-content-between align-items-center my-3'>
                                 <span style={{fontSize: '16px'}}> Add to your feedback </span> <GoInfo />
                             </div>
@@ -42,14 +42,14 @@ class NewsFeedRightSidebar extends React.Component {
                             </Row>
                         <span className="spa1" >View all recommendations</span>
                     </Col>
-                    {/* //#DADDDF */}
+
                     <Col className='col-12 mt-2  home ' style={{padding: '0px'}}>
                         <div className='banerContainer'>
                             <Image src='https://miro.medium.com/max/832/1*9iVDfnmJ8Ab1aEkHAKarrQ.gif' style={{width: 100 + "%"}}/>
                         </div>
                     </Col>
 
-                    <Col className='col-12 mt-2 mb-3 home' >
+                    <Col className='col-12 mt-2 mb-3 home leftSidebarShadow' >
                             <div className='d-flex justify-content-between align-items-center my-3'>
                                 <span style={{fontSize: '16px'}}> LinkedIn Learning </span> <GoInfo />
                             </div>
