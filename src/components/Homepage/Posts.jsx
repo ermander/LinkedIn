@@ -9,10 +9,13 @@ import "../../styles/HomePage.css";
 import { Link } from "react-router-dom";
 import FetchPosts from "../HOC/FetchPosts";
 import axios from 'axios'
+import Comments from './Comments'
 
 class Posts extends Component {
   state = {
     show: false,
+    showDelete : false,
+    showComments : true,
     image:"https://static.toiimg.com/thumb/msid-44945488,width-748,height-499,resizemode=4,imgsize-291921/Nice-in-pictures.jpg",
     file:null,
     text : '',
@@ -42,10 +45,25 @@ class Posts extends Component {
       let text = await axios(postText)
       let file = await axios(postFile)    
   }
+  deletePost = async()=>{
+    let response = await fetch(`https://striveschool.herokuapp.com/api/posts/${this.props.posts._id}`,{
+      method :'DELETE',
+      headers : new Headers({
+        'Authorization' : "Basic " + btoa("user7:3UU5dYFvenRuRP7E")
+      })
+  })
+  if(response.ok){
+    alert('Post deleted Sucessfully')
+  }
+}
   handleLikes = ()=>{
       let prevCount = this.state.count
       this.setState({count:prevCount+1})
   }
+  // commentHandler =()=>{
+  //   let value = this.state.showComments
+  //   this.setState({showComments : !value })
+  // }
   render() {
     return (
       <Container className="mt-2 home px-0">
@@ -80,6 +98,11 @@ class Posts extends Component {
                     );
                   }}
                   >Edit Post</Dropdown.Item>
+
+                    <Dropdown.Item onClick={() => {
+                    this.setState({ showDelete: !this.state.showDelete });
+                  }}
+                    >Delete Post</Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
                 <Modal
@@ -130,6 +153,17 @@ class Posts extends Component {
                     </Button>
                   </Modal.Footer>
                 </Modal>
+                {/* Delete Modal */}
+
+                <Modal show={this.state.showDelete} onHide={() => this.setState({ showDelete: false })}>
+                  <Modal.Body>Are you sure you want to delete the post?</Modal.Body>
+                  <Modal.Footer>
+                    <Button variant="primary" 
+                     onClick={() => this.setState({ showDelete: false },()=> this.deletePost())}>
+                      Confirm
+                    </Button>
+                  </Modal.Footer>
+                </Modal>
               </>
             ) : null}
           </div>
@@ -166,7 +200,7 @@ class Posts extends Component {
             </div>
             <div style={{ display: "flex" }}>
               <IconContext.Provider value={{}}>
-                <p>
+                <p onClick ={this.commentHandler}>
                   <MdComment />
                 </p>
               </IconContext.Provider>
@@ -181,6 +215,7 @@ class Posts extends Component {
               <p>Share</p>
             </div>
           </div>
+          {this.state.showComments ? <Comments id={this.props.posts._id}/> : null}
         </div>
       </Container>
     );

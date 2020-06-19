@@ -107,7 +107,7 @@ class NavBar extends Component {
               <IoMdNotificationsOutline style={{ fontSize: "20px" }} />
               <div style={{ fontSize: "13px" }}> Notifications</div>
             </Nav.Link>
-            <Link className="nav-link" to="/profile/me">
+            <Link className="nav-link" to="/profile/user7">
               <img
                 src={photo}
                 style={{ borderRadius: "50%", height: "20px", width: "20px" }}

@@ -21,7 +21,7 @@ class Profile extends Component {
     name :''
   };
   componentDidMount = async() => {
-    this.fetchExperience();
+   
     let response = await fetch(
       "https://striveschool.herokuapp.com/api/profile/me",
       {
@@ -35,6 +35,7 @@ class Profile extends Component {
     let parsedJson = await response.json()
       this.setState({name : parsedJson.username})
       console.log(parsedJson)
+      this.fetchExperience();
   }
 
   componentDidUpdate = () => {
