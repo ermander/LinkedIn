@@ -141,7 +141,7 @@ class NavBar extends Component {
               </div>
             </Link>
             <Nav.Link
-              style={{ borderRight: "1px grey solid", height: "59px" }}
+              style={{ borderRight: "1px grey solid", height: "57px" }}
             ></Nav.Link>
             <Nav.Link className="navIcon" href="#work">
               <BsGrid3X3GapFill style={{ fontSize: "20px" }} />

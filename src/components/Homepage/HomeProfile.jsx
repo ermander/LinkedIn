@@ -23,8 +23,8 @@ export default class homeprofile extends Component {
   }
   render() {
     return (
-      <div className="">
-        <div className=" home back">
+      <div className="leftSidebarShadow">
+        <div className="home back">
           <img
             className="img-fluid"
             src="https://miro.medium.com/max/1124/1*92adf06PCF91kCYu1nPLQg.jpeg"
