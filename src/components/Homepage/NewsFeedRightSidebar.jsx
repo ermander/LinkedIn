@@ -19,7 +19,7 @@ class NewsFeedRightSidebar extends React.Component {
                                     <div className='ml-1'>
                                         <span>#JavaScript</span>
                                     </div>
-                                    <Button variant="outline" className='d-flex justify-content-center align-items-center'  style={{height: 50 + '%', marginLeft: 'auto', fontSize: 14 + 'px', fontWeight: 700, padding: "6px 8px", borderRadius: '2px', borderColor: '#0073b1', color: '#0073b1'}}><GoPlus />Follow</Button>
+                                    <Button variant="outline" className='d-flex justify-content-center align-items-center followButton'><GoPlus />Follow</Button>
                                 </Col>
                             </Row>
                             <Row>
@@ -28,7 +28,7 @@ class NewsFeedRightSidebar extends React.Component {
                                     <div className='ml-1'>
                                         <span>#programing</span>
                                     </div>
-                                    <Button variant="outline" className='d-flex justify-content-center align-items-center' style={{height: 50 + '%', marginLeft: 'auto', fontSize: 14 + 'px', fontWeight: 700, padding: "6px 8px", borderRadius: '2px', borderColor: '#0073b1', color: '#0073b1'}}><GoPlus />Follow</Button>
+                                    <Button variant="outline" className='d-flex justify-content-center align-items-center followButton'><GoPlus />Follow</Button>
                                 </Col>
                             </Row>
                             <Row>
@@ -37,7 +37,7 @@ class NewsFeedRightSidebar extends React.Component {
                                     <div className='ml-1'>
                                         <span>Richard Branson</span>
                                     </div>
-                                    <Button variant="outline" className='d-flex justify-content-center align-items-center' style={{height: 50 + '%', marginLeft: 'auto', fontSize: 14 + 'px', fontWeight: 700, padding: "6px 8px", borderRadius: '2px', borderColor: '#0073b1', color: '#0073b1'}}><GoPlus />Follow</Button>
+                                    <Button variant="outline" className='d-flex justify-content-center align-items-center followButton'><GoPlus />Follow</Button>
                                 </Col>
                             </Row>
                         <span className="spa1" >View all recommendations</span>

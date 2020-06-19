@@ -315,3 +315,24 @@ textarea.form-control:visited{
   border-radius: 10px;
   background-color: rgb(255, 255, 255);
 }
+.followButton{
+  margin-left: auto;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 6px 8px;
+  border-radius: 2px;
+  border-color: #0073b1;
+  color: #0073b1;
+}
+
+.followButton:hover{
+  border-color: #ffffff;
+  color:#ffffff;
+  background-color: #0073b1;
+}
+
+.postUsernames{
+  font-size: 14px;
+  font-weight: 500;
+  color: black;
+}
