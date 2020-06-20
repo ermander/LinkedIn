@@ -93,7 +93,7 @@ class Profile extends Component {
                     image={element.image} 
                     role={element.role}
                     company={element.company}
-                    startDate={element.startDate.slice(0,10)}
+                    startDate={element.startDate}
                     />
                     );
                   })}
