@@ -39,7 +39,7 @@ class SideBar extends React.Component {
                 <div className='mt-4'>
                     <h2>People Also Viewed</h2>
                     <ul>
-                        {this.state.data.slice(21,27).map(function(data , i){
+                        {this.state.data.slice(0,10).map(function(data , i){
                             return <PageViewer data={data} key={i}/>
                            
                         })}

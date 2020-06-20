@@ -8,7 +8,11 @@ const PageViewer = (data) => {
     <li className='mb-2'>
         <Row>
             <Col className='col-3'>
-                <Image src={data.data.image} style={{width: '100%', borderRadius: 30 + 'px', overflow: 'hidden'}} alt="User's picture"/>
+            {data.data.image ? <Image  src={data.data.image}  style={{width: '100%',height:'80%', borderRadius: 30 + 'px', overflow: 'hidden'}} alt="User's picture" />
+                 :
+                 <Image  src="https://capenetworks.com/static/images/testimonials/user-icon.svg"  style={{width: '100%', borderRadius: 30 + 'px', overflow: 'hidden'}} alt="User's picture"/>
+                 }
+               
             </Col>
                 <Col className='col-7 d-flex flex-column'>
                     {/* {if (data.data.username === user7){
